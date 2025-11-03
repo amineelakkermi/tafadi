@@ -1,0 +1,177 @@
+/* Importation des polices depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Kufam:ital,wght@0,400..900;1,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Kufi+Arabic:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Titan+One&display=swap');
+@import "tailwindcss";
+
+*{
+  direction: rtl;
+}
+
+/* ============================= */
+/* 🎨 Variables globales de thème */
+/* ============================= */
+:root {
+  --color-text: #fff; /* Texte clair */
+  --color-bg: #160d24;   /* Fond clair */
+
+  /* 🎨 Palette personnalisée */
+  --color-yellow: #B4E50D;
+  --color-dark: #101112;
+  --color-gray: #808182;
+  --color-light-gray: #F3F4F6;
+  --color-accent: #3B82F6; /* Exemple : bleu Tailwind */
+  --color-red: #EF4444;    /* Exemple : rouge vif */
+}
+
+/* ============================= */
+/* 🌙 Mode sombre (optionnel) */
+/* ============================= */
+
+
+/* ============================= */
+/* 🧩 Application des styles globaux */
+/* ============================= */
+body {
+  @apply transition-colors duration-200;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* ============================= */
+/* ✍️ Polices globales */
+/* ============================= */
+* {
+  scroll-behavior: smooth;
+  font-family: "cairo";
+}
+
+/* ============================= */
+/* 📰 Titres (H1) - Style commun */
+/* ============================= */
+
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-kufam {
+  font-family: "Kufam", sans-serif;
+}
+
+.font-cairo {
+  font-family: "Cairo", sans-serif;
+}
+
+/* ============================= */
+/* 📏 Structure */
+/* ============================= */
+html, body {
+  overflow-x: hidden;
+}
+
+/* ============================= */
+
+/* Marquee (infinite horizontal scroll) */
+.marquee { overflow: hidden; }
+.marquee__track { display: flex; width: max-content; gap: 2rem; animation: marquee-scroll 28s linear infinite; will-change: transform; }
+.marquee__group { display: flex; gap: 2rem; }
+.marquee:hover .marquee__track { animation-play-state: paused; }
+@keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee__track { animation-duration: 0.01ms; animation-iteration-count: 1; } }
+
+.text-yellow{
+  color: var(--color-yellow);
+}
+
+
+.gradient-circle1{
+  background: linear-gradient(#6929C4, #6a41a3);
+  filter: blur(100px);
+  opacity: 1;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15%;
+  right: 5%;
+}
+
+
+.gradient-circle2{
+  background: linear-gradient(#6929C4, #6a41a3);
+  filter: blur(100px);
+  opacity: 1;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15%;
+  left: 5%;
+}
+
+
+.gradient-circle3{
+  background: linear-gradient(#6929C4, #6a41a3);
+  filter: blur(100px);
+  opacity: 1;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
+
+
+.gradient-circle4{
+  background: linear-gradient(#6929C4, #6a41a3);
+  filter: blur(250px);
+  opacity: 1;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 30%;
+}
+
+.gradient-circle5 {
+  background: linear-gradient(90deg, #6929C4, #6a41a3);
+  filter: blur(150px);
+  width: 800px;
+  height: 400px; 
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  top: 200px; 
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  z-index: -1;
+}
+
+
+
+
+.gradient-card1{
+  background: linear-gradient(#6929C4, #6a41a3);
+  filter: blur(100px);
+  opacity: 1;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15%;
+  right: 5%;
+}
+
+
+.gradient-card2{
+  background: linear-gradient(#6929C4, #6a41a3);
+  filter: blur(100px);
+  opacity: 1;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+  left: 5%;
+}
