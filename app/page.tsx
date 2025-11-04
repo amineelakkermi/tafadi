@@ -1,3 +1,4 @@
+import Contact from '@/components/Contact'
 import Features from '@/components/Features'
 import Hero from '@/components/Hero'
 import HowItWorks from '@/components/HowItWorks'
@@ -11,14 +12,8 @@ const page = () => {
       <Features />
       <HowItWorks />
       <ProtectionCases />
-      {/* 
-
-      <Experience />
-      <Services />
-      <Portfolio />
-      <Feedbacks />
       <Contact />
-      */}
+     
     </main>
   )
 }
