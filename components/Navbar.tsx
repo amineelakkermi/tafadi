@@ -49,7 +49,7 @@ export default function Navbar(): JSX.Element {
             {navItems.map((item) => (
               <li key={item.id}>
                 <Link
-                  href={`#${item.id}`}
+                  href={`${item.id !== 'home' ? `#${item.id}` : '/'}`}
                   className="text-white font-medium tracking-wide hover:opacity-80 transition-colors"
                 >
                   {item.name}
