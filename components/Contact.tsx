@@ -32,7 +32,8 @@ const Contact = () => {
 
     {/* Enhanced CTA Button */}
     <Link
-      href="#contact"
+      href="https://wa.me/+966554413535"
+      target='_blank'
       className="group relative mt-8 flex gap-4 items-center justify-center rounded-full 
         px-8 sm:px-10 py-4 text-base sm:text-lg font-semibold text-white 
         bg-gradient-to-r from-violet-600 via-purple-600 to-violet-600
