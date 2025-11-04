@@ -10,24 +10,24 @@ import goodClient from '../public/goodClient.png';
 import Image from "next/image"
 
 interface CaseItem {
-  icon: StaticImageData
+  icon: string
   badCase: string
   solution: string
 }
 
 const casesData: CaseItem[] = [
   {
-    icon: badClient,
+    icon: '../public/badClient.png',
     badCase: "عميل سلوكه سيء معك",
     solution: "تفادي سيخفي عنه الدفع عند الاستلام والتحويل البنكي حسب الحاجة.",
   },
   {
-    icon: badClient,
+    icon: '../public/badClient.png',
     badCase: "عميل جديد عليك ولكن لديه تاريخ سيء مع غيرك",
     solution: "تفادي سيخفي عنه الدفع عند الاستلام والتحويل البنكي حسب الحاجة.",
   },
   {
-    icon: goodClient,
+    icon: '../public/goodClient.png',
     badCase: "عميل سلوكه جيد معك ولكن سلوكه سيء مع غيرك",
     solution:
       "تفادي سيحترم سلوكه معك ولن يقوم بشيء، ولكن سيكون تحت المراقبة في حال تغيّر سلوكه.",
