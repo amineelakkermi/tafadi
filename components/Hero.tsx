@@ -44,7 +44,7 @@ export default function Hero() {
             {/* زر بنفسجي رئيسي */}
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center rounded-full px-6 sm:px-8 py-3 text-base font-semibold text-white 
+              className="inline-flex z-10 items-center justify-center rounded-full px-6 sm:px-8 py-3 text-base font-semibold text-white 
               bg-gradient-to-r from-violet-500 to-purple-600 
               hover:from-violet-600 hover:to-purple-700 
               transition-all duration-200 shadow-[0_0_20px_rgba(168,85,247,0.3)]"
@@ -55,7 +55,7 @@ export default function Hero() {
             {/* زر شفاف */}
             <Link
               href="#portfolio"
-              className="inline-flex items-center justify-center rounded-full px-6 sm:px-8 py-3 text-base font-semibold 
+              className="inline-flex z-10 items-center justify-center rounded-full px-6 sm:px-8 py-3 text-base font-semibold 
               bg-transparent text-white border border-white/30
               "
             >
