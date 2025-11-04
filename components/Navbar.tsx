@@ -49,7 +49,7 @@ export default function Navbar(): JSX.Element {
             {navItems.map((item) => (
               <li key={item.id}>
                 <Link
-                  href={`${item.id !== 'home' ? `#${item.id}` : '/'}`}
+                  href={item.id === 'home' ? '/' : `/#${item.id}`}
                   className="text-white font-medium tracking-wide hover:opacity-80 transition-colors"
                 >
                   {item.name}
@@ -87,7 +87,7 @@ export default function Navbar(): JSX.Element {
               {navItems.map((item) => (
                 <li key={item.id}>
                   <Link
-                    href={`#${item.id}`}
+                    href={item.id === 'home' ? '/' : `/#${item.id}`}
                     className="block px-4 py-3 text-white font-medium tracking-wide hover:bg-white/[0.04]"
                     onClick={() => setIsOpen(false)}
                   >
