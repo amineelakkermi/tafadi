@@ -67,28 +67,26 @@ const socials: Social[] = [
 
 export default function Footer(): JSX.Element {
   return (
-    <footer className="bg-black text-white">
-      <div className="mx-auto w-full max-w-7xl py-6 px-6 sm:px-10">
-        <div className="h-16 sm:h-20 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
+    <footer className="bg-[#000000] border-t border-white/10 text-white">
+      <div className="mx-auto w-full max-w-7xl py-8 px-6 sm:px-10">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-4">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Image src={logo} width={30} height={30} alt="logo" />
-            <span className="font-semibold text-lg">EA4</span>
+            <Image src={logo} width={35} height={35} alt="logo" className="opacity-90" />
           </div>
 
          {/* Links: سياسة الخصوصية والشروط والأحكام */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/70">
-          <Link href="/privacy" className="hover:underline">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/60 font-cairo">
+          <Link href="/privacy" className="hover:text-white transition-colors duration-200">
             سياسة الخصوصية
           </Link>
-          <Link href="/terms" className="hover:underline">
+          <span className="hidden sm:block text-white/30">|</span>
+          <Link href="/terms" className="hover:text-white transition-colors duration-200">
             الشروط والأحكام
           </Link>
         </div>
        
         </div>
-
-     
       </div>
     </footer>
   )
