@@ -12,7 +12,6 @@ const page = () => {
       <Features />
       <HowItWorks />
       <ProtectionCases />
-      <FaqAccordion />
       {/* 
 
       <Experience />

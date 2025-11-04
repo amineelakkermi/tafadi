@@ -1,9 +1,8 @@
 'use client'
-import Image  from "next/image"
-import React, { ReactNode } from "react"
+import Image, { StaticImageData }  from "next/image"
 
 interface CasePairProps {
-  icon: string
+  icon: string | StaticImageData
   badCase: string
   solution: string
 }
