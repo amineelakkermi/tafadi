@@ -28,8 +28,11 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
     const el = divRef.current
     if (!el) return
 
-    const ctx = gsap.context(() => {
-      const mm = gsap.matchMedia()
+    let ctx: gsap.Context | null = null
+    let mm: gsap.MatchMedia | null = null
+
+    ctx = gsap.context(() => {
+      mm = gsap.matchMedia()
       mm.add('(prefers-reduced-motion: no-preference)', () => {
         gsap.from(el, {
           y: 24,
@@ -38,11 +41,13 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
           ease: 'power3.out',
           scrollTrigger: { trigger: el, start: 'top 90%', once: true },
         })
-        return () => mm.revert()
       })
     })
 
-    return () => ctx.revert()
+    return () => {
+      if (mm) mm.revert()
+      if (ctx) ctx.revert()
+    }
   }, [])
 
   

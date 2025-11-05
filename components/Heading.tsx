@@ -37,49 +37,58 @@ export default function Heading({
 
   useEffect(() => {
     if (typeof window === 'undefined') return
-    if ((gsap as any).plugins?.ScrollTrigger == null) {
-      gsap.registerPlugin(ScrollTrigger)
+    
+    let ctx: gsap.Context | null = null
+    let mm: gsap.MatchMedia | null = null
+
+    const initAnimation = () => {
+      if ((gsap as any).plugins?.ScrollTrigger == null) {
+        gsap.registerPlugin(ScrollTrigger)
+      }
+
+      ctx = gsap.context(() => {
+        mm = gsap.matchMedia()
+        mm.add('(prefers-reduced-motion: no-preference)', () => {
+          const triggerEl = titleRef.current ?? textRef.current
+          if (!triggerEl) return
+
+          const tl = gsap.timeline({
+            defaults: { ease: 'power3.out' },
+            scrollTrigger: {
+              trigger: triggerEl,
+              start: 'top 85%',
+              once: true,
+            },
+          })
+
+          if (titleRef.current) {
+            tl.from(titleRef.current, {
+              y: 24,
+              autoAlpha: 0,
+              duration: 0.7,
+              scale: 0.98,
+              filter: 'blur(6px)',
+              clearProps: 'filter,transform',
+            })
+          }
+
+          if (textRef.current) {
+            tl.from(textRef.current, {
+              y: 16,
+              autoAlpha: 0,
+              duration: 0.6,
+            }, '-=0.35')
+          }
+        })
+      })
     }
 
-    const ctx = gsap.context(() => {
-      const mm = gsap.matchMedia()
-      mm.add('(prefers-reduced-motion: no-preference)', () => {
-        const triggerEl = titleRef.current ?? textRef.current
-        if (!triggerEl) return
+    initAnimation()
 
-        const tl = gsap.timeline({
-          defaults: { ease: 'power3.out' },
-          scrollTrigger: {
-            trigger: triggerEl,
-            start: 'top 85%',
-            once: true,
-          },
-        })
-
-        if (titleRef.current) {
-          tl.from(titleRef.current, {
-            y: 24,
-            autoAlpha: 0,
-            duration: 0.7,
-            scale: 0.98,
-            filter: 'blur(6px)',
-            clearProps: 'filter,transform',
-          })
-        }
-
-        if (textRef.current) {
-          tl.from(textRef.current, {
-            y: 16,
-            autoAlpha: 0,
-            duration: 0.6,
-          }, '-=0.35')
-        }
-
-        return () => mm.revert()
-      })
-    })
-
-    return () => ctx.revert()
+    return () => {
+      if (mm) mm.revert()
+      if (ctx) ctx.revert()
+    }
   }, [])
 
   if (layout === 'inline') {
