@@ -8,6 +8,7 @@ import badClient from '../public/badClient.png';
 import goodClient from '../public/goodClient.png';
 
 import Image, { StaticImageData } from "next/image"
+import Heading from "./Heading"
 
 
 
@@ -37,12 +38,16 @@ export default function ProtectionCases() {
       className={`relative min-h-screen w-full text-start bg-black/40 ${styles.padding}`}
     >
       <div className="gradient-circle5"></div>
-      <div className="max-w-6xl flex flex-col items-center mx-auto space-y-6 my-16 border-b border-white/10 pb-16">
-        <h2 className={`${styles.title}`}>حـالـــات الحمــاية</h2>
-        <p className={`${styles.paragraph} text-center`}>
-          نظام تفادي لا يتعامل مع كل العملاء بنفس الطريقة، بل يكيّف أسلوب الحماية وفقًا لتاريخ
-          وسلوك العميل لضمان أقصى درجات الأمان والمرونة.
-        </p>
+      <div className="max-w-6xl flex flex-col items-center mx-auto my-16 border-b border-white/10 pb-16">
+        <Heading
+          as="h2"
+          title={"حـالـــات الحمــاية"}
+          text={
+            "نظام تفادي لا يتعامل مع كل العملاء بنفس الطريقة، بل يكيّف أسلوب الحماية وفقًا لتاريخ وسلوك العميل لضمان أقصى درجات الأمان والمرونة."
+          }
+          containerClassName="space-y-6 text-center"
+          align="center"
+        />
       </div>
 
       <div className="max-w-3xl mx-auto flex flex-col gap-12">

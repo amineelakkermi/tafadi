@@ -3,6 +3,7 @@
 import styles from '@/styles/style'
 import React, { useRef, useState, useEffect } from 'react'
 import { gsap } from 'gsap'
+import Heading from './Heading'
 
 type FaqItem = { question: string; answer: React.ReactNode }
 const faqData: FaqItem[] = [
@@ -119,7 +120,7 @@ const FaqAccordion = () => {
       className={`relative flex flex-col justify-center items-center gap-12 min-h-screen w-full text-start bg-black/40 ${styles.padding}`}
     >
       <div className="gradient-circle4" />
-      <h1 className={`${styles.title} text-center`}>الأسئلة الشائعة</h1>
+      <Heading as="h1" title={"الأسئلة الشائعة"} align="center" />
 
       <div className="max-w-3xl mx-auto space-y-6">
         {faqData.map((item, index) => (

@@ -5,6 +5,8 @@ import report from '../public/report.png';
 import guard from '../public/guard.png';
 
 import WorkCard from "./WorkCard"
+import Heading from "./Heading"
+import React from 'react'
 
 const workData = [
   {
@@ -35,13 +37,17 @@ export default function HowItWorks() {
     id="works"
     className={`relative min-h-screen w-full text-start bg-black/40 ${styles.padding}`}>
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between space-y-6 my-16 border-b-white/20 border-b pb-16">
-        <h2 className={`${styles.title}`}>
-          كيف يعمل تفادي
-        </h2>
-        <p className={`${styles.paragraph} text-center lg:text-start`}>
-          لأن تفادي نظام متكامل للحماية الذكية، يراقب متجرك لحظة بلحظة، يمنحك تنبيهات فورية،
-          وتحكمًا كاملاً لتأمين تجربة بيع أكثر موثوقية وأمانًا.
-        </p>
+        <Heading
+          as="h2"
+          title={"كيف يعمل تفادي"}
+          text={
+            "لأن تفادي نظام متكامل للحماية الذكية، يراقب متجرك لحظة بلحظة، يمنحك تنبيهات فورية، وتحكمًا كاملاً لتأمين تجربة بيع أكثر موثوقية وأمانًا."
+          }
+          layout="inline"
+          titleClassName=""
+          textClassName={`text-center lg:text-start`}
+          align="start"
+        />
       </div>
 
       <div className="gradient-circle4"></div>

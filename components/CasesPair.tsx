@@ -1,5 +1,8 @@
 'use client'
 import Image, { StaticImageData }  from "next/image"
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 interface CasePairProps {
   icon: string | StaticImageData
@@ -8,8 +11,33 @@ interface CasePairProps {
 }
 
 const CasePair: React.FC<CasePairProps> = ({ icon, badCase, solution }) => {
+  const rootRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if ((gsap as any).plugins?.ScrollTrigger == null) {
+      gsap.registerPlugin(ScrollTrigger)
+    }
+    const el = rootRef.current
+    if (!el) return
+    const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia()
+      mm.add('(prefers-reduced-motion: no-preference)', () => {
+        gsap.from(el, {
+          y: 20,
+          autoAlpha: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 92%', once: true },
+        })
+        return () => mm.revert()
+      })
+    })
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <div className="flex flex-row items-center justify-between gap-4 sm:gap-8 relative">
+    <div ref={rootRef} className="flex flex-row items-center justify-between gap-4 sm:gap-8 relative">
       {/* Bad Case */}
       <div className="relative p-2 sm:p-4 flex flex-col gap-3 items-center justify-center w-56 h-56 rounded-[25px]
       bg-white/10 border border-white/10 backdrop-blur-lg shadow-lg hover:bg-white/20 transition-all duration-500">

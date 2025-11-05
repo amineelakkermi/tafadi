@@ -1,6 +1,7 @@
 import FeatureCard from "./FeatureCard"
 import styles from "@/styles/style"
 import { Settings2, Bell, Mail, Shield } from "lucide-react"
+import Heading from "./Heading"
 
 const featuresData = [
   {
@@ -34,14 +35,18 @@ export default function Features() {
     <section
     id="features"
     className={`relative min-h-screen w-full text-center bg-black/40 ${styles.padding}`}>
-      <div className="max-w-3xl mx-auto space-y-6 my-16">
-        <h2 className={`${styles.title}`}>
-         لمـاذا تختــار تفــادي ؟
-        </h2>
-        <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-          لأن تفادي نظام متكامل للحماية الذكية، يراقب متجرك لحظة بلحظة، يمنحك تنبيهات فورية،
-          وتحكمًا كاملاً لتأمين تجربة بيع أكثر موثوقية وأمانًا.
-        </p>
+      <div className="max-w-3xl mx-auto my-16">
+        <Heading
+          as="h2"
+          title={"لمـاذا تختــار تفــادي ؟"}
+          text={
+            "لأن تفادي نظام متكامل للحماية الذكية، يراقب متجرك لحظة بلحظة، يمنحك تنبيهات فورية، وتحكمًا كاملاً لتأمين تجربة بيع أكثر موثوقية وأمانًا."
+          }
+          containerClassName="space-y-6"
+          textClassName="text-gray-300 text-base sm:text-lg leading-relaxed"
+          useDefaultParagraph={false}
+          align="center"
+        />
       </div>
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

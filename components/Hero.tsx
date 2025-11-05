@@ -1,6 +1,7 @@
 import styles from '@/styles/style'
 import Link from 'next/link'
 import Particles from './Particles'
+import Heading from './Heading'
 
 export default function Hero() {
   return (
@@ -33,14 +34,23 @@ export default function Hero() {
 
       <div className="mx-auto max-w-7xl w-full px-6 sm:px-10 py-12 z-50">
         <div className="mx-auto max-w-4xl text-center space-y-10">
-          <h1 id="hero-title" className={`${styles.title} leading-tight`}>
-            احمِ متجرك من الطلبات الوهمية والمحتالين
-          </h1>
-
-          <p className="mx-auto max-w-3xl text-base sm:text-lg text-gray-200">
-          تفادي يراقب عمليات الدفع عند الاستلام، ويصنف العملاء وفقًا لتاريخ تعاملاتهم.
-          لتتجنب الخسائر الناتجة عن الطلبات غير الجادة بسهولة وذكاء.
-          </p>
+          <Heading
+            as="h1"
+            id="hero-title"
+            title={"احمِ متجرك من الطلبات الوهمية والمحتالين"}
+            text={(
+              <>
+                تفادي يراقب عمليات الدفع عند الاستلام، ويصنف العملاء وفقًا لتاريخ تعاملاتهم.
+                <br />
+                لتتجنب الخسائر الناتجة عن الطلبات غير الجادة بسهولة وذكاء.
+              </>
+            )}
+            containerClassName=""
+            titleClassName="leading-tight"
+            textClassName="mx-auto max-w-3xl text-base sm:text-lg text-gray-200"
+            useDefaultParagraph={false}
+            align="center"
+          />
 
           <div className="flex items-center justify-center gap-4 sm:gap-6">
             {/* زر بنفسجي رئيسي */}

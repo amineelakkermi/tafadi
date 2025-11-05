@@ -13,6 +13,7 @@ const page = () => {
       <Features />
       <HowItWorks />
       <ProtectionCases />
+      
       <FaqAccordion />
       <Contact />
      

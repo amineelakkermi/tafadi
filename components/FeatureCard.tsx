@@ -1,5 +1,7 @@
 'use client'
-import React, { useRef, useState, ReactNode } from 'react'
+import React, { useEffect, useRef, useState, ReactNode } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 interface FeatureCardProps {
   icon: ReactNode
@@ -17,6 +19,33 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
   const [isFocused, setIsFocused] = useState(false)
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 })
   const [opacity, setOpacity] = useState(0)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    if ((gsap as any).plugins?.ScrollTrigger == null) {
+      gsap.registerPlugin(ScrollTrigger)
+    }
+    const el = divRef.current
+    if (!el) return
+
+    const ctx = gsap.context(() => {
+      const mm = gsap.matchMedia()
+      mm.add('(prefers-reduced-motion: no-preference)', () => {
+        gsap.from(el, {
+          y: 24,
+          autoAlpha: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+        })
+        return () => mm.revert()
+      })
+    })
+
+    return () => ctx.revert()
+  }, [])
+
+  
 
   const handleMouseMove: React.MouseEventHandler<HTMLDivElement> = (e) => {
     if (!divRef.current || isFocused) return
