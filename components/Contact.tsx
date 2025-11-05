@@ -21,11 +21,11 @@ const Contact = () => {
 
     {/* Title with gradient and glow effect */}
     <div className="relative text-center z-10">
-      <h1 className={`text-[40px] sm:text-[50px] lg:text-[90px] font-cairo font-bold leading-tight
+      <h1 className={`text-[30px] sm:text-[40px] lg:text-[80px] font-cairo font-bold leading-tight
         text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-100 to-white
         drop-shadow-[0_0_30px_rgba(168,85,247,0.3)]
       `}>
-        لديك سؤال <br /> أو استفســار ؟
+        لديك استفسار <br /> أو ترغب بالاستثمار ؟
       </h1>
       {/* Decorative line under title */}
       <div className="mt-6 mx-auto w-32 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent rounded-full" />
