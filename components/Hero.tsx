@@ -19,17 +19,19 @@ export default function Hero() {
     particleColors={['#ffffff', '#ffffff']}
     particleCount={200}
     particleSpread={10}
-    speed={0.1}
-    particleBaseSize={100}
-    moveParticlesOnHover={false}
+    speed={0.05}
+    particleBaseSize={50}
+    moveParticlesOnHover={true}
     alphaParticles={false}
     disableRotation={false}
   />
+      
+      
     </div>
 
     
 
-      <div className="mx-auto max-w-7xl w-full px-6 sm:px-10 py-12">
+      <div className="mx-auto max-w-7xl w-full px-6 sm:px-10 py-12 z-50">
         <div className="mx-auto max-w-4xl text-center space-y-10">
           <h1 id="hero-title" className={`${styles.title} leading-tight`}>
             احمِ متجرك من الطلبات الوهمية والمحتالين
