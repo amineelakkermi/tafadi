@@ -5,13 +5,14 @@ import React, { JSX, useEffect, useState } from 'react'
 import logo from '../public/logo.png';
 import Image from 'next/image';
 
-type NavItemId = 'home' | 'features' | 'works' | 'contact'
+type NavItemId = 'home' | 'features' | 'works' | 'dashboard' | 'contact' 
 interface NavItem { id: NavItemId; name: string }
 
 const navItems: NavItem[] = [
   { id: 'home', name: 'الرئيسية' },
   { id: 'features', name: 'المميزات' },
   { id: 'works', name: 'كيف يعمل تفادي ' },
+  { id: 'dashboard', name: 'لوحة تحكم التجار' },
   { id: 'contact', name: 'تواصل معنا' },
 ]
 
@@ -49,9 +50,16 @@ export default function Navbar(): JSX.Element {
             {navItems.map((item) => (
               <li key={item.id}>
                 <Link
-                  href={item.id === 'home' ? '/' : `/#${item.id}`}
+                  href={
+                  item.id === 'home'
+                  ? '/'
+                  : item.id === 'dashboard'
+                  ? 'https://s.tafadi.sa/merchant/login'
+                  : `/#${item.id}`
+                 
+                  }
                   className="text-white font-medium tracking-wide hover:opacity-80 transition-colors"
-                >
+               >
                   {item.name}
                 </Link>
               </li>
@@ -87,7 +95,13 @@ export default function Navbar(): JSX.Element {
               {navItems.map((item) => (
                 <li key={item.id}>
                   <Link
-                    href={item.id === 'home' ? '/' : `/#${item.id}`}
+                    href={
+                  item.id === 'home'
+                  ? '/'
+                  : item.id === 'dashboard'
+                  ? 'https://s.tafadi.sa/merchant/login'
+                  : `/#${item.id}`
+                  }
                     className="block px-4 py-3 text-white font-medium tracking-wide hover:bg-white/[0.04]"
                     onClick={() => setIsOpen(false)}
                   >

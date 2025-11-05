@@ -3,13 +3,14 @@ import styles from '@/styles/style'
 import { ArrowUpIcon, ArrowUpLeft, ArrowUpRight, Send } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
+import EmailScrolling from '@/components/EmailScrolling'
 
 const Contact = () => {
   const numberOfItems = 3;
   
   return (
-    <section id='contact' className={`${styles.paddingY} min-h-screen flex flex-col 
-    gap-8 justify-center items-center relative bg-black/30
+    <section id='contact' className={`lg:pt-16 pt-12 min-h-[100vh] flex flex-col 
+    gap-8 justify-center items-center relative bg-black/30 pb-24 lg:pb-40
     `}>
     
     {/* Background decorative elements */}
@@ -29,6 +30,8 @@ const Contact = () => {
       {/* Decorative line under title */}
       <div className="mt-6 mx-auto w-32 h-1 bg-gradient-to-r from-transparent via-purple-500 to-transparent rounded-full" />
     </div>
+
+   
 
     {/* Enhanced CTA Button */}
     <Link
@@ -73,6 +76,9 @@ const Contact = () => {
       />
     </Link>
 
+    <div className="absolute bottom-0 left-0 w-full" >
+      <EmailScrolling />
+    </div>
     </section>
   )
 }

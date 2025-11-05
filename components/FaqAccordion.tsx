@@ -116,7 +116,7 @@ const FaqAccordion = () => {
   return (
     <section
       id="faq"
-      className={`relative flex flex-col gap-12 min-h-screen w-full text-start bg-black/40 ${styles.padding}`}
+      className={`relative flex flex-col justify-center items-center gap-12 min-h-screen w-full text-start bg-black/40 ${styles.padding}`}
     >
       <div className="gradient-circle4" />
       <h1 className={`${styles.title} text-center`}>الأسئلة الشائعة</h1>
