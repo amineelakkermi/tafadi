@@ -51,11 +51,11 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
         transition-all duration-300
       `}
     >
-      {/* الخلفيات القديمة */}
+      {/* Gradient Circle */}
       <div className="gradient-card1"></div>
       <div className="gradient-card2"></div>
 
-      {/* تأثير الإضاءة */}
+      {/* Light Effect */}
       <div
         className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
         style={{
@@ -64,7 +64,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
         }}
       />
 
-      {/* المحتوى */}
+      {/* Content */}
       <div className="relative flex flex-col items-center text-center space-y-4 z-10">
         <div className="text-violet-400 text-4xl w-[80px] h-[80px] rounded-full border border-white/20 flex justify-center items-center">
           {icon}

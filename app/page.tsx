@@ -1,4 +1,5 @@
 import Contact from '@/components/Contact'
+import FaqAccordion from '@/components/FaqAccordion'
 import Features from '@/components/Features'
 import Hero from '@/components/Hero'
 import HowItWorks from '@/components/HowItWorks'
@@ -12,6 +13,7 @@ const page = () => {
       <Features />
       <HowItWorks />
       <ProtectionCases />
+      <FaqAccordion />
       <Contact />
      
     </main>

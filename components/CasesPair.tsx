@@ -10,7 +10,7 @@ interface CasePairProps {
 const CasePair: React.FC<CasePairProps> = ({ icon, badCase, solution }) => {
   return (
     <div className="flex flex-row items-center justify-between gap-4 sm:gap-8 relative">
-      {/* دائرة الحالة السيئة */}
+      {/* Bad Case */}
       <div className="relative p-2 sm:p-4 flex flex-col gap-3 items-center justify-center w-56 h-56 rounded-[25px]
       bg-white/10 border border-white/10 backdrop-blur-lg shadow-lg hover:bg-white/20 transition-all duration-500">
         <div className="mb-2">
@@ -21,10 +21,10 @@ const CasePair: React.FC<CasePairProps> = ({ icon, badCase, solution }) => {
         </p>
       </div>
 
-      {/* الخط الواصل بين الدائرتين */}
+      {/* Line */}
       <div className="hidden md:block w-64 max-w-64 h-[2px] bg-white/10" />
 
-      {/* دائرة الحل */}
+      {/* Solution*/}
       <div className="relative p-2 sm:p-4 flex flex-col gap-3 items-center justify-center w-56 h-56 rounded-[25px]
        bg-white/10 border border-white/10 backdrop-blur-lg shadow-lg hover:bg-white/20 transition-all duration-500">
         <span className="text-violet-400 text-sm font-semibold mb-1">الحــل</span>
