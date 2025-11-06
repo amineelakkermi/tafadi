@@ -15,8 +15,8 @@ const page = () => {
       <HowItWorks />
       <ProtectionCases />
       
-      <FaqAccordion />
       <Pricing />
+      <FaqAccordion />
       <Contact />
      
     </main>
