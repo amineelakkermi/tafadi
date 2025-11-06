@@ -4,7 +4,7 @@ import { JSX } from 'react'
 import logo from '../public/logo.png';
 
 type Social = {
-  id: 'facebook' | 'instagram' | 'tiktok' | 'snapchat' | 'x'
+  id: 'youtube' | 'instagram' | 'twitter'
   href: string
   label: string
   icon: JSX.Element
@@ -12,21 +12,21 @@ type Social = {
 
 const socials: Social[] = [
   {
-    id: 'facebook',
-    href: 'https://facebook.com/',
-    label: 'Facebook',
+    id: 'youtube',
+    href: 'https://www.youtube.com/@tafadise',
+    label: 'YouTube',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3.5l.5-4H14V7a1 1 0 0 1 1-1h3z" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.499 6.203a3.004 3.004 0 0 0-2.116-2.124C19.561 3.5 12 3.5 12 3.5s-7.561 0-9.383.579A3.004 3.004 0 0 0 .5 6.203 31.62 31.62 0 0 0 0 12a31.62 31.62 0 0 0 .5 5.797 3.004 3.004 0 0 0 2.116 2.124C4.439 20.5 12 20.5 12 20.5s7.561 0 9.383-.579a3.004 3.004 0 0 0 2.116-2.124A31.62 31.62 0 0 0 24 12a31.62 31.62 0 0 0-.501-5.797zM9.75 15.5v-7l6 3.5-6 3.5z"/>
       </svg>
     ),
   },
   {
     id: 'instagram',
-    href: 'https://instagram.com/',
+    href: 'https://www.instagram.com/tafadise?igsh=MTgwNzVrN2JudGF4aw%3D%3D',
     label: 'Instagram',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <rect x="2" y="2" width="20" height="20" rx="5" />
         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -34,31 +34,11 @@ const socials: Social[] = [
     ),
   },
   {
-    id: 'tiktok',
-    href: 'https://www.tiktok.com/',
-    label: 'TikTok',
+    id: 'twitter',
+    href: 'https://x.com/tafadise?s=21',
+    label: 'Twitter',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 48 48" fill="currentColor">
-        <path d="M41.5 17.6c-4.3-.9-7.8-3.8-9.3-7.8V34c0 6.1-5 11-11.1 11S10 40.1 10 34s5-11 11.1-11c.7 0 1.4.1 2 .2v6.6c-.6-.2-1.3-.3-2-.3-3 0-5.4 2.4-5.4 5.4S18.1 40 21.1 40s5.4-2.4 5.4-5.4V4.5h6.6c1.2 5.1 5.4 9.2 10.7 10.3v6.8z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'snapchat',
-    href: 'https://www.snapchat.com/',
-    label: 'Snapchat',
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 64 64" fill="currentColor">
-        <path d="M32 8c8.8 0 16 7.2 16 16v6.9c0 2.6 2.2 4.7 4.8 4.7.6 0 1.2.5 1.3 1.1.2.7-.2 1.4-.9 1.6-2.9.8-4.5 2.2-5.1 3.9-.7 2.2 1.1 3.6 4.3 4 .8.1 1.3.9 1.1 1.6-.2.7-.9 1.1-1.6 1-3.4-.5-6.1-1.6-8.2-3.1-3.3 4.5-8.2 7.7-12.7 7.7s-9.4-3.2-12.7-7.7c-2.1 1.5-4.8 2.6-8.2 3.1-.7.1-1.4-.3-1.6-1-.2-.7.3-1.5 1.1-1.6 3.2-.4 5-1.8 4.3-4-.6-1.7-2.2-3.1-5.1-3.9-.7-.2-1.1-.9-.9-1.6.2-.6.7-1.1 1.3-1.1 2.6 0 4.8-2.1 4.8-4.7V24C16 15.2 23.2 8 32 8z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'x',
-    href: 'https://twitter.com/',
-    label: 'X',
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20.98 3H18.7l-5.1 6.2L8.4 3H3.02l7.38 10.18L3.3 21h2.28l5.68-6.9 5.07 6.9h5.45l-7.76-10.56L20.98 3z" />
       </svg>
     ),
@@ -75,17 +55,55 @@ export default function Footer(): JSX.Element {
             <Image src={logo} width={35} height={35} alt="logo" className="opacity-90" />
           </div>
 
-         {/* Links: سياسة الخصوصية والشروط والأحكام */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/60 font-cairo">
-          <Link href="/privacy" className="hover:text-white transition-colors duration-200">
-            سياسة الخصوصية
-          </Link>
-          <span className="hidden sm:block text-white/30">|</span>
-          <Link href="/terms" className="hover:text-white transition-colors duration-200">
-            الشروط والأحكام
-          </Link>
-        </div>
        
+        
+        {/* Social icons */}
+        <div className="flex items-center gap-4 text-white/80">
+          {socials.map((s) => (
+            <a
+              key={s.id}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={s.label}
+              className="p-2 rounded-full hover:bg-white/10 hover:text-white transition-colors"
+            >
+              {s.icon}
+            </a>
+          ))}
+        </div>
+
+        {/* Download buttons */}
+        <div className="flex items-center gap-3">
+          <a
+            href="https://salla.sa/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm hover:bg-white/20 transition-colors"
+          >
+            تحميل عبر سلة
+          </a>
+          <a
+            href="https://zid.sa/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm hover:bg-white/20 transition-colors"
+          >
+            تحميل عبر زد
+          </a>
+        </div>
+        </div>
+        {/* Bottom links row */}
+        <div className="mt-6 pt-6 border-t border-white/10 text-center flex items-center justify-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/60 font-cairo">
+            <Link href="/privacy" className="hover:text-white transition-colors duration-200">
+              سياسة الخصوصية
+            </Link>
+            <span className="hidden sm:block text-white/30">|</span>
+            <Link href="/terms" className="hover:text-white transition-colors duration-200">
+              الشروط والأحكام
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

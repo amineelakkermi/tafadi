@@ -3,6 +3,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 import Features from '@/components/Features'
 import Hero from '@/components/Hero'
 import HowItWorks from '@/components/HowItWorks'
+import Pricing from '@/components/Pricing'
 import ProtectionCases from '@/components/ProtectionCases'
 import StepsSection from '@/components/StepsSection'
 
@@ -15,6 +16,7 @@ const page = () => {
       <ProtectionCases />
       
       <FaqAccordion />
+      <Pricing />
       <Contact />
      
     </main>
