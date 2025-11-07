@@ -31,7 +31,7 @@ export default function Navbar(): JSX.Element {
       {/* Outer container centered at 90% width */}
       <div className="mx-auto w-[94%] sm:w-[90%] lg:w-[86%] max-w-[1100px]">        {/* Glassmorphism bar */}
        <nav className={["rounded-full border border-white/10 px-4 sm:px-6","h-14 sm:h-16 flex items-center justify-between",
-       "bg-[#0b0615]/60 backdrop-blur-xl",
+       "bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-white/[0.02] backdrop-blur-xl",
        "shadow-[0_0_30px_rgba(255,255,255,0.05)]",
        isScrolled ? "border-white/30" : "border-white/20",].join(" ")}
        aria-label="Main navigation"
