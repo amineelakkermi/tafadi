@@ -79,11 +79,11 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`group relative rounded-2xl border border-violet-500/20 p-6 sm:p-8 
-        bg-gradient-to-b from-white/5 to-transparent backdrop-blur-[2px]
-        shadow-[0_0_25px_rgba(168,85,247,0.12)] overflow-hidden
-        hover:shadow-[0_0_34px_rgba(168,85,247,0.40)] 
-        transition-all duration-300
+      className={`group relative rounded-2xl border border-white/10 p-6 sm:p-8 
+        bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-white/[0.02] backdrop-blur-xl
+        shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] overflow-hidden
+        hover:border-white/20 hover:shadow-[0_8px_40px_0_rgba(168,85,247,0.25)]
+        transition-all duration-500 ease-out
       `}
     >
       {/* Gradient Circle */}
@@ -92,16 +92,19 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
 
       {/* Light Effect */}
       <div
-        className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-in-out rounded-2xl"
         style={{
           opacity,
-          background: `radial-gradient(circle at ${position.x}px ${position.y}px, rgba(168,85,247,0.25), transparent 80%)`
+          background: `radial-gradient(circle at ${position.x}px ${position.y}px, rgba(168,85,247,0.15), transparent 70%)`
         }}
       />
+      
+      {/* Subtle inner glow */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none" />
 
       {/* Content */}
       <div className="relative flex flex-col items-center text-center space-y-4 z-10">
-        <div className="text-violet-400 text-4xl w-[80px] h-[80px] rounded-full border border-white/20 flex justify-center items-center">
+        <div className="text-violet-400 text-4xl w-[80px] h-[80px] rounded-full border border-white/10 bg-white/[0.02] backdrop-blur-sm flex justify-center items-center shadow-[0_0_20px_rgba(168,85,247,0.1)]">
           {icon}
         </div>
         <h3 className="text-lg sm:text-xl font-semibold text-white">{title}</h3>
