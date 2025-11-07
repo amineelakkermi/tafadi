@@ -80,7 +80,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`group relative rounded-2xl border border-violet-500/20 p-6 sm:p-8 
-        shadow-[0_0_25px_rgba(168,85,247,0.1)] 
+        shadow-[0_0_25px_rgba(168,85,247,0.1)] overflow-hidden
         hover:shadow-[0_0_30px_rgba(168,85,247,0.3)] 
         transition-all duration-300
       `}

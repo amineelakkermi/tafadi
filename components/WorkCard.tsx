@@ -81,7 +81,7 @@ const WorkCard: React.FC<WorkCardProps> = ({ icon, title, description }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`group relative rounded-2xl border border-white/10 py-10 sm:py-12 px-6 sm:px-8 
-        bg-white/10 
+        bg-white/10 overflow-hidden
         backdrop-blur-lg
         shadow-[0_0_20px_rgba(0,0,0,0.15)] 
         hover:shadow-[0_0_25px_rgba(0,0,0,0.3)] 

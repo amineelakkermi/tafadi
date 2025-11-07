@@ -103,7 +103,8 @@ const PricingCard: React.FC<{ tier: Tier }> = ({ tier }) => {
       }}
       onMouseEnter={() => setOpacity(0.5)}
       onMouseLeave={() => setOpacity(0)}
-      className={`relative h-full min-h-[520px] sm:min-h-[560px] md:min-h-[600px] lg:min-h-[640px] rounded-2xl border p-5 sm:p-6 md:p-8 transition-all duration-300
+      className={`relative h-full min-h-[520px] sm:min-h-[560px] md:min-h-[600px] lg:min-h-[640px]
+        rounded-2xl overflow-hidden border p-5 sm:p-6 md:p-8 transition-all duration-300
          bg-gradient-to-b from-white/5 to-transparent backdrop-blur-[2px]
         shadow-[0_0_25px_rgba(168,85,247,0.12)] hover:shadow-[0_0_34px_rgba(168,85,247,0.40)]
         ${tier.highlight ? 'border-violet-400/40' : 'border-violet-500/20'}`}

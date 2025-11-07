@@ -76,7 +76,7 @@ export default function Footer(): JSX.Element {
         {/* Download buttons */}
         <div className="flex items-center gap-3">
           <a
-            href="https://salla.sa/"
+            href="https://s.salla.sa/auth?intended_to=https%3A%2F%2Fs.salla.sa%2Fapps%2Finstall%2F1450881912%3Ftrial%3D1%26utm_source%3Dapps"
             target="_blank"
             rel="noreferrer noopener"
             className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm hover:bg-white/20 transition-colors"
