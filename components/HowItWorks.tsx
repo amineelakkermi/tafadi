@@ -38,7 +38,7 @@ export default function HowItWorks() {
     className={`relative min-h-screen w-full text-start bg-black/40 ${styles.padding}`}>
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between space-y-6 my-16 border-b-white/20 border-b pb-16">
         <Heading
-          as="h2"
+          as="h1"
           title={"كيف يعمل تفادي"}
           text={
             "لأن تفادي نظام متكامل للحماية الذكية، يراقب متجرك لحظة بلحظة، يمنحك تنبيهات فورية، وتحكمًا كاملاً لتأمين تجربة بيع أكثر موثوقية وأمانًا."

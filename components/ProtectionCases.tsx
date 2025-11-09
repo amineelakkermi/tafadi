@@ -45,7 +45,7 @@ export default function ProtectionCases() {
       <div className="gradient-circle5"></div>
       <div className="max-w-6xl flex flex-col items-center mx-auto my-16 border-b border-white/10 pb-16">
         <Heading
-          as="h2"
+          as="h1"
           title={"حـالـــات الحمــاية"}
           text={
             "نظام تفادي لا يتعامل مع كل العملاء بنفس الطريقة، بل يكيّف أسلوب الحماية وفقًا لتاريخ وسلوك العميل لضمان أقصى درجات الأمان والمرونة."

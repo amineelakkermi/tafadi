@@ -34,7 +34,7 @@ const images = [
 export default function Partners() {
   return (
     <section className={`relative lg:px-12 px-6 lg:py-12 py-6 bg-black/30`}>
-    <div className="max-w-3xl mx-auto my-16">
+    <div className="max-w-3xl mx-auto lg:my-12 my-6">
 
       <div className='gradient-circle5' />
 

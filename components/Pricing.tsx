@@ -63,7 +63,7 @@ const Pricing = () => {
     <section id="pricing" className="w-full relative py-16 sm:py-24 bg-black/30" dir="rtl">
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 flex flex-col items-center text-center">
         <Heading
-          as="h2"
+          as="h1"
           title="خطط الأسعار"
           text="اختر الخطة المناسبة لحجم متجرك على زد أو سلة"
           containerClassName="mb-12"

@@ -19,7 +19,7 @@ export default function Hero() {
 
     <div className="w-full h-[100%] absolute left-0 top-0">
     
-        <Particles
+    <Particles
     particleColors={['#ffffff', '#ffffff']}
     particleCount={200}
     particleSpread={10}
@@ -28,7 +28,7 @@ export default function Hero() {
     moveParticlesOnHover={true}
     alphaParticles={false}
     disableRotation={false}
-  />
+    />
       
       
     </div>
