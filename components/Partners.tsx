@@ -29,8 +29,10 @@ const images = [
 
 export default function Partners() {
   return (
-    <section className="w-full flex flex-col py-10 px-4 md:px-16 bg-white text-center relative">
-      <div className={styles.wrapper}>
+    <section className="relative bg-black/30 flex flex-col py-10 px-4 md:px-16 
+    text-center relative">
+     
+       <div className={styles.wrapper}>
         {images.map((src, index) => (
           <div 
             key={index}
@@ -39,13 +41,15 @@ export default function Partners() {
             <Image 
               src={src}
               alt={`Partner ${index + 1}`} 
-              width={100} 
-              height={100} 
+              width={70} 
+              height={70} 
               className="object-contain"
             />
           </div>
         ))}
       </div>
+
+
     </section>
   );
 }

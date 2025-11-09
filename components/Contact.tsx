@@ -75,6 +75,7 @@ const Contact = () => {
         opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500" 
       />
     </Link>
+    
 
     {/*
      <div className="absolute bottom-0 left-0 w-full" >

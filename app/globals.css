@@ -15,7 +15,7 @@
 
   /* 🎨 Palette personnalisée */
   --color-yellow: #B4E50D;
-  --color-dark: #101112;
+  --color-dark: #160d24;
   --color-gray: #808182;
   --color-light-gray: #F3F4F6;
   --color-accent: #3B82F6; /* Exemple : bleu Tailwind */
@@ -135,9 +135,6 @@ html, body {
 }
 
 
-
-
-
 .gradient-circle5 {
   background: linear-gradient(90deg, #6929C4, #6a41a3);
   filter: blur(150px);
@@ -151,9 +148,6 @@ html, body {
   opacity: 1;
   z-index: -1;
 }
-
-
-
 
 .gradient-card1{
   background: linear-gradient(#6929C4, #6a41a3);
@@ -184,9 +178,9 @@ html, body {
 
 /* Pagination */
   .swiper-pagination-bullet {
-          background-color: white !important;
-          opacity: 0.5;
-        }
-        .swiper-pagination-bullet-active {
-          opacity: 1;
+   background-color: white !important;
+   opacity: 0.5;
+   }
+   .swiper-pagination-bullet-active {
+   opacity: 1;
   }
