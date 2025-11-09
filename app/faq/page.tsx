@@ -157,7 +157,6 @@ const FaqAccordion = () => {
       </div>
 
       </div>
-      <Partners />
     </section>
   )
 }

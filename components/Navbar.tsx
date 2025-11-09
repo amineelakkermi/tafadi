@@ -22,10 +22,12 @@ export default function Navbar(): JSX.Element {
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 8)
-    window.addEventListener('scroll', onScroll)
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  const onScroll = () => setIsScrolled(window.scrollY > 100); // ← seuil 100px
+  window.addEventListener('scroll', onScroll);
+  return () => window.removeEventListener('scroll', onScroll);
+}, []);
+
+  
 
   return (
     <header className="fixed top-4 left-0 right-0 z-[999]">
@@ -40,10 +42,9 @@ export default function Navbar(): JSX.Element {
 
           {/* Logo */}
           <Link href="/" className="flex items-center" aria-label="Go to homepage">
-            <div className="logo">
-            <Image src={logo} width={30} height={30} alt='logo' />
+          <div className={`logo transition-opacity duration-500 ${isScrolled ? 'opacity-100' : 'opacity-0'}`}>
+          <Image src={logo} width={30} height={30} alt='logo' />
           </div>
-
           </Link>
 
           {/* Desktop menu */}
