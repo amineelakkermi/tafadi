@@ -122,7 +122,7 @@ const FaqAccordion = () => {
     min-h-screen w-full text-start`}
     >
       <div className="gradient-circle4" />
-      <div className={`${styles.marginY} flex flex-col gap-12`}>
+      <div className={`${styles.marginY} ${styles.marginX} flex flex-col gap-12`}>
       <Heading as="h1" title={"الأسئلة الشائعة"} align="center" />
 
       <div className="max-w-3xl mx-auto space-y-6">
