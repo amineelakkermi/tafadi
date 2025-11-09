@@ -18,7 +18,7 @@ type HeadingProps = {
 }
 
 export default function Heading({
-  as = 'h2',
+  as = 'h1',
   id,
   title,
   text,

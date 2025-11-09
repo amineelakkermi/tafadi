@@ -7,6 +7,11 @@ import CasePair from "./CasesPair"
 import badClient from '../public/badClient.png';
 import goodClient from '../public/goodClient.png';
 
+import badClient1 from '../public/badClient1.png';
+import goodClient1 from '../public/goodClient1.png';
+import newClient from '../public/newClient.png';
+
+
 import Image, { StaticImageData } from "next/image"
 import Heading from "./Heading"
 

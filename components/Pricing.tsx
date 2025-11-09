@@ -4,13 +4,16 @@ import React from 'react'
 import Heading from '@/components/Heading'
 
 // Swiper
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/navigation'
-import 'swiper/css/pagination'
-import 'swiper/css/effect-coverflow'
 import { PricingCard } from './PrcingCard'
+
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/effect-coverflow"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper/modules"
+import styles from "@/styles/style"
+
 
 const tiers = [
   {

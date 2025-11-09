@@ -75,7 +75,7 @@ export default function Features() {
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
-          className="w-full"
+          className="max-w-6xl"
         >
           {featuresData.map((feature, index) => (
             <SwiperSlide key={index} className="flex justify-center w-full sm:w-auto">

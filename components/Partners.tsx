@@ -20,12 +20,14 @@ import partner14 from '../public/partners/partner14.webp'
 import partner15 from '../public/partners/partner15.webp'
 import partner16 from '../public/partners/partner16.webp'
 import partner17 from '../public/partners/partner17.webp'
+import partner18 from '../public/partners/partner18.webp'
+
 import Heading from './Heading';
 
 const images = [
   partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8,
   partner9, partner10, partner11, partner12, partner13, partner14, partner15,
-  partner16, partner17
+  partner16, partner17 , partner18
 ];
 
 export default function Partners() {
@@ -55,8 +57,8 @@ export default function Partners() {
             <Image 
               src={src}
               alt={`Partner ${index + 1}`} 
-              width={70} 
-              height={70} 
+              width={100} 
+              height={100} 
               className="object-contain"
             />
           </div>
