@@ -33,7 +33,21 @@ const images = [
 
 export default function Partners() {
   return (
-    <section className={`lg:px-12 px-6 lg:py-12 py-6 bg-black/30`}>
+    <section className={`relative lg:px-12 px-6 lg:py-12 py-6 bg-black/30`}>
+    <div className="max-w-3xl mx-auto my-16">
+
+      <div className='gradient-circle5' />
+
+       <Heading
+       as="h1"
+       title={"أبرز عملاءنــا"}
+                
+       containerClassName="space-y-6"
+       textClassName="text-gray-300 text-base sm:text-lg leading-relaxed"
+       useDefaultParagraph={false}
+       align="center"
+       />
+      </div> 
     <div className="relative
     bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-white/[0.02] backdrop-blur-xl
     max-w-6xl mx-auto rounded-full bg-black/30 flex flex-col py-10 px-4 md:px-16 
@@ -66,17 +80,3 @@ export default function Partners() {
 
 
 
-{/*
-<div className="max-w-3xl mx-auto my-16">
-
-       <Heading
-       as="h1"
-       title={"أبرز عملاءنــا"}
-                
-       containerClassName="space-y-6"
-       textClassName="text-gray-300 text-base sm:text-lg leading-relaxed"
-       useDefaultParagraph={false}
-       align="center"
-       />
-      </div>  
-*/}
