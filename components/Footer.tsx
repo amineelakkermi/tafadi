@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { JSX } from 'react'
 import logo from '../public/logo.png';
+import DownloadButton from './DownloadButton';
 
 type Social = {
   id: 'youtube' | 'instagram' | 'twitter'
@@ -74,24 +75,7 @@ export default function Footer(): JSX.Element {
         </div>
 
         {/* Download buttons */}
-        <div className="flex items-center gap-3">
-          <a
-            href="https://s.salla.sa/auth?intended_to=https%3A%2F%2Fs.salla.sa%2Fapps%2Finstall%2F1450881912%3Ftrial%3D1%26utm_source%3Dapps"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm hover:bg-white/20 transition-colors"
-          >
-            تحميل عبر سلة
-          </a>
-          <a
-            href="https://zid.sa/"
-            target="_blank"
-            rel="noreferrer noopener"
-            className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm hover:bg-white/20 transition-colors"
-          >
-            تحميل عبر زد
-          </a>
-        </div>
+        <DownloadButton />
         </div>
         {/* Bottom links row */}
         <div className="mt-6 pt-6 border-t border-white/10 text-center flex items-center justify-center">

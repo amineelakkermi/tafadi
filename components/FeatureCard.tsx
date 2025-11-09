@@ -20,35 +20,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 })
   const [opacity, setOpacity] = useState(0)
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    if ((gsap as any).plugins?.ScrollTrigger == null) {
-      gsap.registerPlugin(ScrollTrigger)
-    }
-    const el = divRef.current
-    if (!el) return
-
-    let ctx: gsap.Context | null = null
-    let mm: gsap.MatchMedia | null = null
-
-    ctx = gsap.context(() => {
-      mm = gsap.matchMedia()
-      mm.add('(prefers-reduced-motion: no-preference)', () => {
-        gsap.from(el, {
-          y: 24,
-          autoAlpha: 0,
-          duration: 0.6,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: el, start: 'top 90%', once: true },
-        })
-      })
-    })
-
-    return () => {
-      if (mm) mm.revert()
-      if (ctx) ctx.revert()
-    }
-  }, [])
+  
 
   
 
@@ -84,6 +56,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
         shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] overflow-hidden
         hover:border-white/20 hover:shadow-[0_8px_40px_0_rgba(168,85,247,0.25)]
         transition-all duration-500 ease-out
+        min-h-[300px]
       `}
     >
       {/* Gradient Circle */}

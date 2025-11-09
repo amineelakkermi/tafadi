@@ -66,13 +66,18 @@ export default function Navbar(): JSX.Element {
             ))}
           </ul>
 
-          {/* Mobile toggle */}
+         <div className='flex md:hidden text-black gap-5 items-center'>
+          <Link target='_blank' href="https://s.tafadi.sa/merchant/login"
+          className="block md:hidden text-white font-medium tracking-wide hover:opacity-80 transition-colors"> 
+          لوحة تحكم التجار
+          </Link>
+           {/* Mobile toggle */}
           <button
-            className="md:hidden text-black"
             aria-label="Toggle menu"
             aria-expanded={isOpen}
             onClick={() => setIsOpen((v) => !v)}
           >
+            
             {isOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="18" y1="6" x2="6" y2="18" />
@@ -86,13 +91,17 @@ export default function Navbar(): JSX.Element {
               </svg>
             )}
           </button>
+         </div>
+ 
+         
         </nav>
 
         {/* Mobile dropdown (glass too) */}
         {isOpen && (
           <div className="md:hidden mt-2 rounded-2xl border border-black/10 bg-[#0b0615]/60 backdrop-blur-xl shadow-sm">
             <ul className="flex flex-col py-2">
-              {navItems.map((item) => (
+              {navItems.filter((item) => item.id !== 'dashboard')
+              .map((item) => (
                 <li key={item.id}>
                   <Link
                     href={

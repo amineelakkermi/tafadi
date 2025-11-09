@@ -1,7 +1,16 @@
+'use client'
+
+import React from "react"
 import FeatureCard from "./FeatureCard"
-import styles from "@/styles/style"
-import { Settings2, Bell, Mail, Shield } from "lucide-react"
 import Heading from "./Heading"
+import { Settings2, Bell, Mail, Shield } from "lucide-react"
+import "swiper/css"
+import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/effect-coverflow"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Navigation, Pagination, Autoplay, EffectCoverflow } from "swiper/modules"
+import styles from "@/styles/style"
 
 const featuresData = [
   {
@@ -33,8 +42,10 @@ const featuresData = [
 export default function Features() {
   return (
     <section
-    id="features"
-    className={`relative min-h-screen w-full text-center bg-black/40 ${styles.padding}`}>
+      id="features"
+      className={`relative min-h-screen w-full text-center bg-black/40 ${styles.padding}`}
+      dir="rtl"
+    >
       <div className="max-w-3xl mx-auto my-16">
         <Heading
           as="h2"
@@ -51,16 +62,31 @@ export default function Features() {
 
       <div className="gradient-circle4" />
 
-
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {featuresData.map((feature, index) => (
-          <FeatureCard
-            key={index}
-            icon={feature.icon}
-            title={feature.title}
-            description={feature.description}
-          />
-        ))}
+      <div className="max-w-6xl mx-auto w-full">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+          grabCursor={true}
+          spaceBetween={20}
+          pagination={{ clickable: true }}
+          loop
+          autoplay={{ delay: 4000 }}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="w-full"
+        >
+          {featuresData.map((feature, index) => (
+            <SwiperSlide key={index} className="flex justify-center w-full sm:w-auto">
+              <FeatureCard
+                icon={feature.icon}
+                title={feature.title}
+                description={feature.description}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </section>
   )

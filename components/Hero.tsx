@@ -2,6 +2,9 @@ import styles from '@/styles/style'
 import Link from 'next/link'
 import Particles from './Particles'
 import Heading from './Heading'
+import Image from 'next/image'
+import logo from '../public/logo.png';
+import DownloadButton from './DownloadButton'
 
 export default function Hero() {
   return (
@@ -33,7 +36,11 @@ export default function Hero() {
     
 
       <div className="mx-auto max-w-7xl w-full px-6 sm:px-10 py-12 z-50">
-        <div className="mx-auto max-w-4xl text-center space-y-10">
+        <div className="mx-auto max-w-4xl flex flex-col items-center text-center space-y-10">
+         <div className="logo">
+            <Image src={logo} width={80} height={80} alt='logo' />
+          </div>
+         
           <Heading
             as="h1"
             id="hero-title"
@@ -52,28 +59,8 @@ export default function Hero() {
             align="center"
           />
 
-          <div className="flex items-center justify-center gap-4 sm:gap-6">
-            {/* زر بنفسجي رئيسي */}
-            <Link
-              href="#contact"
-              className="inline-flex z-10 items-center justify-center rounded-full px-6 sm:px-8 py-3 text-base font-semibold text-white 
-              bg-gradient-to-r from-violet-500 to-purple-600 
-              hover:from-violet-600 hover:to-purple-700 
-              transition-all duration-200 shadow-[0_0_20px_rgba(168,85,247,0.3)]"
-            >
-              تواصل معنا
-            </Link>
-
-            {/* زر شفاف */}
-            <Link
-              href="#works"
-              className="inline-flex z-10 items-center justify-center rounded-full px-6 sm:px-8 py-3 text-base font-semibold 
-              bg-transparent text-white border border-white/30
-              "
-            >
-              شاهد كيف تعمل الخدمة
-            </Link>
-          </div>
+        {/* Download buttons */}
+        <DownloadButton />
         </div>
       </div>
     </section>
