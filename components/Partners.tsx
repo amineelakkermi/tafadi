@@ -20,6 +20,7 @@ import partner14 from '../public/partners/partner14.webp'
 import partner15 from '../public/partners/partner15.webp'
 import partner16 from '../public/partners/partner16.webp'
 import partner17 from '../public/partners/partner17.webp'
+import Heading from './Heading';
 
 const images = [
   partner1, partner2, partner3, partner4, partner5, partner6, partner7, partner8,
@@ -31,6 +32,19 @@ export default function Partners() {
   return (
     <section className="relative bg-black/30 flex flex-col py-10 px-4 md:px-16 
     text-center relative">
+
+      <div className="max-w-3xl mx-auto my-16">
+
+       <Heading
+       as="h1"
+       title={"أبرز عملاءنــا"}
+                
+       containerClassName="space-y-6"
+       textClassName="text-gray-300 text-base sm:text-lg leading-relaxed"
+       useDefaultParagraph={false}
+       align="center"
+       />
+      </div>
      
        <div className={styles.wrapper}>
         {images.map((src, index) => (
