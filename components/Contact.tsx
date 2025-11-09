@@ -77,6 +77,11 @@ const Contact = () => {
     </Link>
     
 
+     <div className="absolute bottom-0 left-0 w-full" >
+      <EmailScrolling />
+    </div>
+
+
     {/*
      <div className="absolute bottom-0 left-0 w-full" >
       <EmailScrolling />

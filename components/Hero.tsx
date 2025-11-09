@@ -37,7 +37,7 @@ export default function Hero() {
 
       <div className="mx-auto max-w-7xl w-full px-6 sm:px-10 py-12 z-50">
         <div className="mx-auto max-w-4xl flex flex-col items-center text-center space-y-10">
-         <div className="logo">
+         <div>
             <Image src={logo} width={80} height={80} alt='logo' />
           </div>
          

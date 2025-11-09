@@ -48,20 +48,20 @@ export default function DownloadButton() {
         className="flex items-center justify-center gap-3 w-48 h-16 rounded-full border border-white/15 bg-white/10 text-sm hover:bg-white/20 transition-colors"
       >
         تحميل عبر 
-      <Image src={zid} width={50} height={50} alt="Salla" className="object-contain" />
+      <Image src={zid} width={50} height={50} alt="Salla" className="logo object-contain" />
 
       </a>
      
-      <a
-        href="https://s.salla.sa/auth?intended_to=https%3A%2F%2Fs.salla.sa%2Fapps%2Finstall%2F1450881912%3Ftrial%3D1%26utm_source%3Dapps"
+       <a
+        href="https://zid.sa/"
         target="_blank"
         rel="noreferrer noopener"
-        className="flex items-center justify-center gap-3 w-48 h-16 rounded-full bg-white/90 text-black font-bold text-md shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+        className="flex items-center justify-center gap-3 w-48 h-16 rounded-full border border-white/15 bg-white/10 text-sm hover:bg-white/20 transition-colors"
       >
-        تحميل عبر
-        <Image src={partner4} width={50} height={50} alt="Salla" className="object-contain" />
-      </a>
+        تحميل عبر 
+      <Image src={partner4} width={50} height={50} alt="Salla" className="logo object-contain" />
 
+      </a>
       
     </div>
   );

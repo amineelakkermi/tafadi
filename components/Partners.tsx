@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import styles from './Partners.module.css';
 
+
 import partner1 from '../public/partners/partner1.webp'
 import partner2 from '../public/partners/partner2.webp'
 import partner3 from '../public/partners/partner3.webp'
@@ -32,21 +33,13 @@ const images = [
 
 export default function Partners() {
   return (
-    <section className="relative bg-black/30 flex flex-col py-10 px-4 md:px-16 
+    <section className={`lg:px-12 px-6 lg:py-12 py-6 bg-black/30`}>
+    <div className="relative
+    bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-white/[0.02] backdrop-blur-xl
+    max-w-6xl mx-auto rounded-full bg-black/30 flex flex-col py-10 px-4 md:px-16 
     text-center relative">
 
-      <div className="max-w-3xl mx-auto my-16">
-
-       <Heading
-       as="h1"
-       title={"أبرز عملاءنــا"}
-                
-       containerClassName="space-y-6"
-       textClassName="text-gray-300 text-base sm:text-lg leading-relaxed"
-       useDefaultParagraph={false}
-       align="center"
-       />
-      </div>
+      
      
        <div className={styles.wrapper}>
         {images.map((src, index) => (
@@ -59,13 +52,31 @@ export default function Partners() {
               alt={`Partner ${index + 1}`} 
               width={100} 
               height={100} 
-              className="object-contain"
+              className="object-contain logo"
             />
           </div>
         ))}
       </div>
 
 
+    </div>
     </section>
   );
 }
+
+
+
+{/*
+<div className="max-w-3xl mx-auto my-16">
+
+       <Heading
+       as="h1"
+       title={"أبرز عملاءنــا"}
+                
+       containerClassName="space-y-6"
+       textClassName="text-gray-300 text-base sm:text-lg leading-relaxed"
+       useDefaultParagraph={false}
+       align="center"
+       />
+      </div>  
+*/}

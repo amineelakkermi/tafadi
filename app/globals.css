@@ -14,7 +14,6 @@
   --color-bg: #160d24;   /* Fond clair */
 
   /* 🎨 Palette personnalisée */
-  --color-yellow: #701196;
   --color-dark: #160d24;
   --color-gray: #808182;
   --color-light-gray: #F3F4F6;
@@ -78,8 +77,10 @@ html, body {
 @keyframes marquee-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .marquee__track { animation-duration: 0.01ms; animation-iteration-count: 1; } }
 
-.text-yellow{
-  color: var(--color-yellow);
+
+
+.logo{
+  filter: brightness(0) invert(1);
 }
 
 

@@ -42,7 +42,7 @@ export default function Navbar(): JSX.Element {
 
           {/* Logo */}
           <Link href="/" className="flex items-center" aria-label="Go to homepage">
-          <div className={`logo transition-opacity duration-500 ${isScrolled ? 'opacity-100' : 'opacity-0'}`}>
+          <div className={` transition-opacity duration-500 ${isScrolled ? 'opacity-100' : 'opacity-0'}`}>
           <Image src={logo} width={30} height={30} alt='logo' />
           </div>
           </Link>

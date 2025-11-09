@@ -17,7 +17,6 @@ const page = () => {
       <ProtectionCases />
       <Pricing />
       <Partners />
-
       <Contact />
      
 
