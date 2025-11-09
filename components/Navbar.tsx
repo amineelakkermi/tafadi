@@ -5,7 +5,7 @@ import React, { JSX, useEffect, useState } from 'react'
 import logo from '../public/logo.png';
 import Image from 'next/image';
 
-type NavItemId = 'home' | 'features' | 'works' | 'dashboard' | 'contact' 
+type NavItemId = 'home' | 'features' | 'works' | 'dashboard' | 'contact' | 'faq' 
 interface NavItem { id: NavItemId; name: string }
 
 const navItems: NavItem[] = [
@@ -13,7 +13,8 @@ const navItems: NavItem[] = [
   { id: 'features', name: 'المميزات' },
   { id: 'works', name: 'كيف يعمل تفادي ' },
   { id: 'dashboard', name: 'لوحة تحكم التجار' },
-  { id: 'contact', name: 'تواصل معنا' },
+  { id: 'faq', name: 'الأسئلة الشائعة' },
+
 ]
 
 export default function Navbar(): JSX.Element {
@@ -55,6 +56,8 @@ export default function Navbar(): JSX.Element {
                   ? '/'
                   : item.id === 'dashboard'
                   ? 'https://s.tafadi.sa/merchant/login'
+                  : item.id === 'faq'
+                  ? '/faq'
                   : `/#${item.id}`
                  
                   }
@@ -104,12 +107,14 @@ export default function Navbar(): JSX.Element {
               .map((item) => (
                 <li key={item.id}>
                   <Link
-                    href={
+                     href={
                   item.id === 'home'
                   ? '/'
-                  : item.id === 'dashboard'
-                  ? 'https://s.tafadi.sa/merchant/login'
+                 
+                  : item.id === 'faq'
+                  ? '/faq'
                   : `/#${item.id}`
+                 
                   }
                     className="block px-4 py-3 text-white font-medium tracking-wide hover:bg-white/[0.04]"
                     onClick={() => setIsOpen(false)}

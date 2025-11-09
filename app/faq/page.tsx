@@ -4,6 +4,7 @@ import styles from '@/styles/style'
 import React, { useRef, useState, useEffect } from 'react'
 import { gsap } from 'gsap'
 import Heading from '@/components/Heading'
+import Partners from '@/components/Partners'
 
 type FaqItem = { question: string; answer: React.ReactNode }
 const faqData: FaqItem[] = [
@@ -118,9 +119,10 @@ const FaqAccordion = () => {
     <section
       id="faq"
       className={`relative mt-24 flex flex-col justify-center items-center gap-12 
-    min-h-screen w-full text-start ${styles.padding}`}
+    min-h-screen w-full text-start`}
     >
       <div className="gradient-circle4" />
+      <div className={`${styles.marginY} flex flex-col gap-12`}>
       <Heading as="h1" title={"الأسئلة الشائعة"} align="center" />
 
       <div className="max-w-3xl mx-auto space-y-6">
@@ -153,6 +155,9 @@ const FaqAccordion = () => {
           </div>
         ))}
       </div>
+
+      </div>
+      <Partners />
     </section>
   )
 }
