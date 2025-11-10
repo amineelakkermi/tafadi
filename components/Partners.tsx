@@ -81,8 +81,8 @@ export default function Partners() {
             <Image 
               src={src}
               alt={`Partner ${index + 1}`} 
-              width={index === 1 ? 200 : 100}   // image 11 = index 10
-              height={index === 1 ? 200 : 100}  // image 11 = index 10              height={100} 
+              width={index === 1 ? 200 : 100}   
+              height={index === 1 ? 200 : 100}  
               className="object-cover logo"
             />
           </div>
