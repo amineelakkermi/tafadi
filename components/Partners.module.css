@@ -13,11 +13,11 @@
 
 @keyframes slideLeft {
   0% {
-    left: 140%;
+    left: 100%;
   }
  
   100% {
-    left: -140%;
+    left: -100%;
   }
 }
 
@@ -25,7 +25,7 @@
   width: 150px;
   height: 150px;
   position: absolute;
-  animation: slideLeft 60s linear infinite;
+  animation: slideLeft 50s linear infinite;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,28 +40,28 @@
 }
 
 /* Animation delays pour 18 items */
-.item1  { animation-delay: calc(60s / 9 * (9 - 1) * -1); }
-.item2  { animation-delay: calc(60s / 9 * (9 - 2) * -1); }
-.item3  { animation-delay: calc(60s / 9 * (9 - 3) * -1); }
-.item4  { animation-delay: calc(60s / 9 * (9 - 4) * -1); }
-.item5  { animation-delay: calc(60s / 9 * (9 - 5) * -1); }
-.item6  { animation-delay: calc(60s / 9 * (9 - 6) * -1); }
-.item7  { animation-delay: calc(60s / 9 * (9 - 7) * -1); }
-.item8  { animation-delay: calc(60s / 9 * (9 - 8) * -1); }
-.item9  { animation-delay: calc(60s / 9 * (9 - 9) * -1); }
+.item1  { animation-delay: calc(50s / 9 * (9 - 1) * -1); }
+.item2  { animation-delay: calc(50s / 9 * (9 - 2) * -1); }
+.item3  { animation-delay: calc(50s / 9 * (9 - 3) * -1); }
+.item4  { animation-delay: calc(50s / 9 * (9 - 4) * -1); }
+.item5  { animation-delay: calc(50s / 9 * (9 - 5) * -1); }
+.item6  { animation-delay: calc(50s / 9 * (9 - 6) * -1); }
+.item7  { animation-delay: calc(50s / 9 * (9 - 7) * -1); }
+.item8  { animation-delay: calc(50s / 9 * (9 - 8) * -1); }
+.item9  { animation-delay: calc(50s / 9 * (9 - 9) * -1); }
 
 
 
 
-.item10 { animation-delay: calc(60s / 18 * (18 - 10) * -1); }
-.item11 { animation-delay: calc(60s / 18 * (18 - 11) * -1); }
-.item12 { animation-delay: calc(60s / 18 * (18 - 12) * -1); }
-.item13 { animation-delay: calc(60s / 18 * (18 - 13) * -1); }
-.item14 { animation-delay: calc(60s / 18 * (18 - 14) * -1); }
-.item15 { animation-delay: calc(60s / 18 * (18 - 15) * -1); }
-.item16 { animation-delay: calc(60s / 18 * (18 - 16) * -1); }
-.item17 { animation-delay: calc(60s / 18 * (18 - 17) * -1); }
-.item18 { animation-delay: calc(60s / 18 * (18 - 18) * -1); }
+.item10 { animation-delay: calc(50s / 18 * (18 - 10) * -1); }
+.item11 { animation-delay: calc(50s / 18 * (18 - 11) * -1); }
+.item12 { animation-delay: calc(50s / 18 * (18 - 12) * -1); }
+.item13 { animation-delay: calc(50s / 18 * (18 - 13) * -1); }
+.item14 { animation-delay: calc(50s / 18 * (18 - 14) * -1); }
+.item15 { animation-delay: calc(50s / 18 * (18 - 15) * -1); }
+.item16 { animation-delay: calc(50s / 18 * (18 - 16) * -1); }
+.item17 { animation-delay: calc(50s / 18 * (18 - 17) * -1); }
+.item18 { animation-delay: calc(50s / 18 * (18 - 18) * -1); }
 
 
 /* Responsiveness */

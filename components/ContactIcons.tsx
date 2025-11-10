@@ -28,7 +28,7 @@ const WhatsappButton: React.FC = () => {
       rel="noopener noreferrer"
       aria-label="التواصل عبر واتساب"
       onClick={handleWhatsappClick}
-      className="fixed bottom-3 right-3 z-[9999] flex items-center justify-center rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
+      className="fixed bottom-3 right-0 z-[9999] flex items-center justify-center rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
     >
       <Image src={whatsapp} alt="WhatsApp" width={90} height={90} />
     </a>
