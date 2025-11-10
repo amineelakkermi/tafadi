@@ -23,7 +23,6 @@
 .item {
   width: 100px;
   height: 100px;
-  border-radius: 6px;
   position: absolute;
   animation: slideLeft 60s linear infinite;
   display: flex;
@@ -32,6 +31,7 @@
   font-weight: bold;
   transition: transform 0.6s ease;
   will-change: transform;
+  margin: 0 5rem;
 }
 
 .item:hover {
@@ -75,8 +75,8 @@
 @media screen and (max-width: 576px) {
   .wrapper { height: 60px; }
   .item { 
-    width: 45px;
-    height: 45px;
-    margin: 0 5px; 
+    width: 50px;
+    height: 50px;
+    margin: 0 15rem;
   }
 }
