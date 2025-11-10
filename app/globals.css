@@ -84,6 +84,31 @@ html, body {
 }
 
 
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-phone {
+  background-color: #16a34a; /* vert foncé */
+}
+
+.contact-phone:hover {
+  background-color: #15803d;
+}
+
+.contact-whatsapp {
+  background-color: #25D366;
+}
+
+.contact-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+
 .gradient-circle1{
   background: linear-gradient(#6929C4, #6a41a3);
   filter: blur(100px);

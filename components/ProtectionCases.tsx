@@ -19,17 +19,17 @@ import Heading from "./Heading"
 
 const casesData = [
   {
-    icon: badClient,
+    icon: badClient1,
     badCase: "عميل سلوكه سيء معك",
     solution: "تفادي سيخفي عنه الدفع عند الاستلام والتحويل البنكي حسب الحاجة.",
   },
   {
-    icon: badClient,
+    icon: newClient,
     badCase: "عميل جديد عليك ولكن لديه تاريخ سيء مع غيرك",
     solution: "تفادي سيخفي عنه الدفع عند الاستلام والتحويل البنكي حسب الحاجة.",
   },
   {
-    icon: goodClient,
+    icon: goodClient1,
     badCase: "عميل سلوكه جيد معك ولكن سلوكه سيء مع غيرك",
     solution:
       "تفادي سيحترم سلوكه معك ولن يقوم بشيء، ولكن سيكون تحت المراقبة في حال تغيّر سلوكه.",

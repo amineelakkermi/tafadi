@@ -49,7 +49,7 @@ const CasePair: React.FC<CasePairProps> = ({ icon, badCase, solution }) => {
       <div className="relative p-2 sm:p-4 flex flex-col gap-3 items-center justify-center w-56 h-56 rounded-[25px]
       bg-white/10 border border-white/10 backdrop-blur-lg shadow-lg hover:bg-white/20 transition-all duration-500">
         <div className="mb-2">
-          <Image src={icon} width={80} height={80} alt="icon" />
+          <Image className="logo" src={icon} width={80} height={80} alt="icon" />
         </div>
         <p className="text-center text-gray-300 font-semibold text-[14px] sm:text-[16px] leading-[30px] ">
           {badCase}
