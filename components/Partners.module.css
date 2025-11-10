@@ -73,3 +73,9 @@
   .wrapper { height: 90px; }
   .item { width: 70px; height: 70px; }
 }
+
+
+@media screen and (max-width: 576px) {
+  .wrapper { height: 90px; }
+  .item { width: 55px; height: 55px; }
+}
