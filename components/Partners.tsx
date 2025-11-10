@@ -52,7 +52,7 @@ export default function Partners() {
 
     <div className={`
     bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-white/[0.02] backdrop-blur-xl
-    max-w-6xl mx-auto rounded-full bg-black/30 flex flex-col py-10 px-4 md:px-16
+    max-w-6xl mx-auto rounded-[25px] md:rounded-full bg-black/30 flex flex-col py-10 px-4 md:px-16
     text-center relative`}> 
      
       <div className={styles.wrapper}>
