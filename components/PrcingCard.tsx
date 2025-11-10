@@ -1,5 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 
+type Locale = 'ar' | 'en'
+
+function formatMonthly(value: string, locale: Locale) {
+  const numMatch = value.match(/[\d,.]+/)
+  const num = numMatch ? numMatch[0] : value
+  return locale === 'en' ? `${num} protections/month` : value
+}
+
 interface Position {
   x: number
   y: number
@@ -20,55 +28,31 @@ type Tier = {
   highlight?: boolean
 }
 
-const tiers: Tier[] = [
-  {
-    id: 'basic',
-    title: 'تفادي بيسك',
-    subtitle: 'تناسب المتاجر الصغيرة التي بحدود الـ 100 طلب شهريًا',
-    price: '23 ريال',
-    period: 'شهريًا',
-    monthlyProtections: '10 حمايات شهريًا',
-    reportType: 'مبسط',
-    accountManager: false,
-    specialOffer: '٦ شهور اشتراك + ١ شهر مجانًا',
-    afterDiscount: '7 ريال',
-    ctaLabel: 'ابدأ الآن',
-  },
-  {
-    id: 'pro',
-    title: 'تفادي مرتفع',
-    subtitle: 'تناسب المتاجر المتوسطة التي بحدود الـ 500 طلب شهريًا',
-    price: '89 ريال',
-    period: 'شهريًا',
-    monthlyProtections: '110 حماية شهريًا',
-    reportType: 'مبسط',
-    accountManager: false,
-    specialOffer: '٦ شهور اشتراك + ١ شهر مجانًا',
-    afterDiscount: '26 ريال',
-    ctaLabel: 'اشترك الآن',
-    highlight: true,
-  },
-  {
-    id: 'enterprise',
-    title: 'تفادي لامحدود',
-    subtitle: 'تناسب متاجر الصف الأول التي بحدود الـ 1,000 طلب شهريًا',
-    price: '890 ريال',
-    period: 'شهريًا',
-    monthlyProtections: '1,200 حماية شهريًا',
-    reportType: 'مبسط',
-    accountManager: true,
-    specialOffer: '٦ شهور اشتراك + ١ شهر مجانًا',
-    afterDiscount: '267 ريال',
-    ctaLabel: 'تواصل معنا',
-  },
-]
-
-
-
-export const PricingCard: React.FC<{ tier: Tier }> = ({ tier }) => {
+export const PricingCard: React.FC<{ tier: Tier; locale?: Locale }> = ({ tier, locale = 'ar' }) => {
   const cardRef = useRef<HTMLDivElement>(null)
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 })
   const [opacity, setOpacity] = useState(0)
+
+  const labels = locale === 'en'
+    ? {
+        monthly: 'Monthly protections',
+        report: 'Report type',
+        manager: 'Dedicated account manager',
+        offer: 'Special offer',
+        yes: 'Yes',
+        no: '×',
+      }
+    : {
+        monthly: 'عدد الحمايات الشهرية',
+        report: 'نوع التقرير',
+        manager: 'مدير حساب خاص',
+        offer: 'عرض خاص',
+        yes: 'نعم',
+        no: '×',
+      }
+
+  const labelCls = `text-[13px] sm:text-sm text-gray-300 text-start`
+  const valueCls = `text-sm sm:text-base text-white whitespace-wrap max-w-[150px]  font-medium text-end`
 
   return (
     <div
@@ -84,7 +68,7 @@ export const PricingCard: React.FC<{ tier: Tier }> = ({ tier }) => {
         bg-gradient-to-b from-white/5 to-transparent backdrop-blur-[2px]
         shadow-[0_0_25px_rgba(168,85,247,0.012)] hover:shadow-[0_0_34px_rgba(168,85,247,0.040)]
         ${tier.highlight ? 'border-violet-400/40' : 'border-violet-500/20'}`}
-      style={{ minHeight: '500px' }} // تحديد ارتفاع موحد لكل الكروت
+      style={{ minHeight: '500px' }}
     >
       <div className="gradient-card1"></div>
       <div className="gradient-card2"></div>
@@ -105,32 +89,31 @@ export const PricingCard: React.FC<{ tier: Tier }> = ({ tier }) => {
           )}
         </div>
 
-        {/* After Discount */}
         <div className="flex gap-3 flex-col items-center">
-        <span className="relative text-sm sm:text-[18px] text-red-400 mt-1">
-        {tier.price}
-        <span className="absolute left-0 top-1/2 w-[100%] h-[2px] bg-red-500 -translate-y-1/2"></span>
-         </span>
+          <span className="relative text-sm sm:text-[18px] text-red-400 mt-1">
+            {tier.price}
+            <span className="absolute left-0 top-1/2 w-[100%] h-[2px] bg-red-500 -translate-y-1/2"></span>
+          </span>
           <span className="text-2xl sm:text-3xl font-bold text-violet-200">{tier.afterDiscount}</span>
         </div>
 
         <div className="w-full pt-2 flex-1">
           <div className="divide-y divide-white/10 overflow-hidden rounded-xl bg-white/5">
-            <div className="grid grid-cols-5 items-center gap-3 px-4 py-3 text-right">
-              <span className="col-span-3 text-[13px] sm:text-sm text-gray-300">عدد الحمايات الشهرية</span>
-              <span className="col-span-2 text-sm sm:text-base text-white font-medium">{tier.monthlyProtections}</span>
+            <div className="flex items-center justify-between px-4 py-3" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+              <span className={labelCls}>{labels.monthly}{locale === 'en' ? ':' : ''}</span>
+              <span className={valueCls}>{formatMonthly(tier.monthlyProtections, locale)}</span>
             </div>
-            <div className="grid grid-cols-5 items-center gap-3 px-4 py-3 text-right">
-              <span className="col-span-3 text-[13px] sm:text-sm text-gray-300">نوع التقرير</span>
-              <span className="col-span-2 text-sm sm:text-base text-white font-medium">{tier.reportType}</span>
+            <div className="flex items-center justify-between px-4 py-3" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+              <span className={labelCls}>{labels.report}{locale === 'en' ? ':' : ''}</span>
+              <span className={valueCls}>{tier.reportType}</span>
             </div>
-            <div className="grid grid-cols-5 items-center gap-3 px-4 py-3 text-right">
-              <span className="col-span-3 text-[13px] sm:text-sm text-gray-300">مدير حساب خاص</span>
-              <span className="col-span-2 text-sm sm:text-base text-white font-medium">{tier.accountManager ? 'نعم' : '×'}</span>
+            <div className="flex items-center justify-between px-4 py-3" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+              <span className={labelCls}>{labels.manager}{locale === 'en' ? ':' : ''}</span>
+              <span className={valueCls}>{tier.accountManager ? (locale === 'en' ? 'Yes' : 'نعم') : '×'}</span>
             </div>
-            <div className="grid grid-cols-5 items-center gap-3 px-4 py-3 text-right">
-              <span className="col-span-3 text-[13px] sm:text-sm text-gray-300">عرض خاص</span>
-              <span className="col-span-2 text-sm sm:text-base text-white font-medium">{tier.specialOffer}</span>
+            <div className="flex items-center justify-between px-4 py-3" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+              <span className={labelCls}>{labels.offer}{locale === 'en' ? ':' : ''}</span>
+              <span className={valueCls}>{tier.specialOffer}</span>
             </div>
           </div>
         </div>
@@ -138,4 +121,3 @@ export const PricingCard: React.FC<{ tier: Tier }> = ({ tier }) => {
     </div>
   )
 }
-

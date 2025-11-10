@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import React, { JSX, useEffect, useState } from 'react'
+import React, { JSX, useEffect, useMemo, useState } from 'react'
 import logo from '../public/logo.png'
 import Image from 'next/image'
 
@@ -11,23 +11,41 @@ interface NavItem {
   name: string
 }
 
-const navItems: NavItem[] = [
-  { id: 'home', name: 'الرئيسية' },
-  { id: 'works', name: 'كيف يعمل تفادي ' },
-  { id: 'features', name: 'المميزات' },
-  { id: 'dashboard', name: 'لوحة تحكم التجار' },
-  { id: 'faq', name: 'الأسئلة الشائعة' },
-]
+function getNavItems(locale: 'ar' | 'en'): NavItem[] {
+  if (locale === 'en') {
+    return [
+      { id: 'home', name: 'Home' },
+      { id: 'works', name: 'How Tafadi works' },
+      { id: 'features', name: 'Features' },
+      { id: 'dashboard', name: 'Merchant Dashboard' },
+      { id: 'faq', name: 'FAQ' },
+    ]
+  }
+  return [
+    { id: 'home', name: 'الرئيسية' },
+    { id: 'works', name: 'كيف يعمل تفادي ' },
+    { id: 'features', name: 'المميزات' },
+    { id: 'dashboard', name: 'لوحة تحكم التجار' },
+    { id: 'faq', name: 'الأسئلة الشائعة' },
+  ]
+}
 
-export default function Navbar(): JSX.Element {
+export default function Navbar({ locale = 'ar' }: { locale?: 'ar' | 'en' }): JSX.Element {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const navItems = useMemo(() => getNavItems(locale), [locale])
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 100)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const toggleLocale = () => {
+    const next = locale === 'ar' ? 'en' : 'ar'
+    document.cookie = `locale=${next}; path=/; max-age=${60 * 60 * 24 * 365}`
+    window.location.reload()
+  }
 
   return (
     <header className="fixed top-4 left-0 right-0 z-[999]">
@@ -38,10 +56,20 @@ export default function Navbar(): JSX.Element {
             'h-14 sm:h-16 flex items-center justify-between',
             'bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-white/[0.02] backdrop-blur-xl',
             'shadow-[0_0_30px_rgba(255,255,255,0.05)]',
+            'relative',
             isScrolled ? 'border-white/30' : 'border-white/20',
           ].join(' ')}
           aria-label="Main navigation"
         >
+          <Link
+            href={'https://s.tafadi.sa/merchant/login'}
+            className="flex md:hidden  text-white font-medium tracking-wide hover:opacity-80 transition-colors"
+          >
+           {
+            locale === 'ar' ? 'لوحة تحكم التجار' : 'Merchant Dashboard'
+           }
+        </Link>
+          
           {/* === Bouton mobile à gauche === */}
           <div className="flex md:hidden items-center order-1">
             <button
@@ -84,10 +112,10 @@ export default function Navbar(): JSX.Element {
             </button>
           </div>
 
-          {/* === Logo (centré sur mobile, à droite sur md+) === */}
+          {/* === Logo (exact center on mobile, right on md+) === */}
           <Link
             href="/"
-            className="flex-1 mr-8 flex justify-center md:justify-start items-center"
+            className="absolute left-1/2 -translate-x-1/2 inset-y-0 flex items-center justify-center md:static md:translate-x-0 md:flex-1 md:justify-start"
             aria-label="Go to homepage"
           >
             <div
@@ -98,6 +126,8 @@ export default function Navbar(): JSX.Element {
               <Image src={logo} width={30} height={30} alt="logo" />
             </div>
           </Link>
+
+         
 
           {/* === Menu desktop === */}
           <ul className="hidden md:flex items-center gap-8">
@@ -119,7 +149,18 @@ export default function Navbar(): JSX.Element {
                 </Link>
               </li>
             ))}
+            <li>
+              <button
+                onClick={toggleLocale}
+                className="px-3 py-1 rounded-full border border-white/20 text-white/90 hover:text-white hover:border-white/40 transition-colors"
+                aria-label="Toggle language"
+              >
+                {locale === 'ar' ? 'EN' : 'AR'}
+              </button>
+            </li>
           </ul>
+
+       
         </nav>
 
         {/* === Menu mobile déroulant === */}
@@ -132,17 +173,31 @@ export default function Navbar(): JSX.Element {
                     href={
                       item.id === 'home'
                         ? '/'
+                        : item.id === 'dashboard'
+                        ? 'https://s.tafadi.sa/merchant/login'
                         : item.id === 'faq'
                         ? '/faq'
                         : `/#${item.id}`
                     }
-                    className="block px-4 py-3 text-white font-medium tracking-wide hover:bg-white/[0.04]"
+                    className={`block px-4 py-3 text-white font-medium tracking-wide hover:bg-white/[0.04] ${item.id === 'dashboard' ? (locale === 'ar' ? 'text-right' : 'text-left') : ''}`}
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={() => {
+                    toggleLocale()
+                    setIsOpen(false)
+                  }}
+                  className={`w-full ${locale === 'ar' ? 'text-right' : 'text-left'} block px-4 py-3 text-white font-medium tracking-wide hover:bg-white/[0.04]`}
+                  aria-label="Toggle language"
+                >
+                  {locale === 'ar' ? 'English' : 'العربية'}
+                </button>
+              </li>
             </ul>
           </div>
         )}

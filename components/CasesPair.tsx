@@ -4,13 +4,16 @@ import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+type Locale = 'ar' | 'en'
+
 interface CasePairProps {
   icon: string | StaticImageData
   badCase: string
   solution: string
+  locale?: Locale
 }
 
-const CasePair: React.FC<CasePairProps> = ({ icon, badCase, solution }) => {
+const CasePair: React.FC<CasePairProps> = ({ icon, badCase, solution, locale = 'ar' }) => {
   const rootRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
@@ -43,6 +46,8 @@ const CasePair: React.FC<CasePairProps> = ({ icon, badCase, solution }) => {
     }
   }, [])
 
+  const solutionLabel = locale === 'en' ? 'Solution' : 'الحــل'
+
   return (
     <div ref={rootRef} className="flex flex-row items-center justify-between gap-4 sm:gap-8 relative">
       {/* Bad Case */}
@@ -62,7 +67,7 @@ const CasePair: React.FC<CasePairProps> = ({ icon, badCase, solution }) => {
       {/* Solution*/}
       <div className="relative p-2 sm:p-4 flex flex-col gap-3 items-center justify-center w-56 h-56 rounded-[25px]
        bg-white/10 border border-white/10 backdrop-blur-lg shadow-lg hover:bg-white/20 transition-all duration-500">
-        <span className="text-violet-400 text-sm font-semibold mb-1">الحــل</span>
+        <span className="text-violet-400 text-sm font-semibold mb-1">{solutionLabel}</span>
         <p className="text-center text-gray-300 text-[14px] sm:text-[16px] leading-[30px]">
           {solution}
         </p>

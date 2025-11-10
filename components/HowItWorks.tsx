@@ -8,41 +8,71 @@ import WorkCard from "./WorkCard"
 import Heading from "./Heading"
 import React from 'react'
 
-const workData = [
-  {
-    icon: search,
-    title: "فرز وتصنيف العملاء",
-    description:
-      "يحلل النظام بيانات الطلبات القديمة والجديدة بدقة، ليصنف العملاء حسب مدى الجدية في الدفع عند الاستلام. العملية قد تستغرق بضع ساعات لضمان الدقة.",
-  }, 
-  {
-    icon: report,
-    title: "تقرير شامل عبر البريد الإلكتروني",
-    description:
-      "فور الانتهاء من عملية الفرز، يصلك تقرير تفصيلي إلى بريدك الإلكتروني يوضح حالة الطلبات ومؤشرات الاحتيال المكتشفة.",
-  },
- 
-  {
-    icon: guard,
-    title: "تفادي أصبح رجل أمن في متجرك",
-    description:
-      "يتأكد تفادي آليًا من كل عميل يدخل متجرك، ويراقب الطلبات لحظيًا لاكتشاف السلوك المشبوه قبل أن يسبب خسائر.",
-  },
-]
+type Locale = 'ar' | 'en'
 
+function getWorkData(locale: Locale) {
+  if (locale === 'en') {
+    return [
+      {
+        icon: search,
+        title: 'Filter and classify customers',
+        description:
+          'The system analyzes old and new orders to classify customers by their seriousness with cash-on-delivery. This process can take a few hours to ensure accuracy.',
+      },
+      {
+        icon: report,
+        title: 'Comprehensive report via email',
+        description:
+          'Once classification is done, you receive a detailed report to your email showing order statuses and detected fraud indicators.',
+      },
+      {
+        icon: guard,
+        title: 'Tafadi becomes the security guard of your store',
+        description:
+          'Tafadi automatically verifies every customer entering your store and monitors orders in real time to detect suspicious behavior before it causes losses.',
+      },
+    ]
+  }
+  return [
+    {
+      icon: search,
+      title: "فرز وتصنيف العملاء",
+      description:
+        "يحلل النظام بيانات الطلبات القديمة والجديدة بدقة، ليصنف العملاء حسب مدى الجدية في الدفع عند الاستلام. العملية قد تستغرق بضع ساعات لضمان الدقة.",
+    },
+    {
+      icon: report,
+      title: "تقرير شامل عبر البريد الإلكتروني",
+      description:
+        "فور الانتهاء من عملية الفرز، يصلك تقرير تفصيلي إلى بريدك الإلكتروني يوضح حالة الطلبات ومؤشرات الاحتيال المكتشفة.",
+    },
+    {
+      icon: guard,
+      title: "تفادي أصبح رجل أمن في متجرك",
+      description:
+        "يتأكد تفادي آليًا من كل عميل يدخل متجرك، ويراقب الطلبات لحظيًا لاكتشاف السلوك المشبوه قبل أن يسبب خسائر.",
+    },
+  ]
+}
 
-export default function HowItWorks() {
+export default function HowItWorks({ locale = 'ar' }: { locale?: Locale }) {
+  const isEn = locale === 'en'
+  const headingTitle = isEn ? 'How Tafadi works' : 'كيف يعمل تفادي'
+  const headingText = isEn
+    ? 'As a complete smart protection system, Tafadi monitors your store in real time, gives instant alerts, and full control for a more reliable and secure sales experience.'
+    : 'لأن تفادي نظام متكامل للحماية الذكية، يراقب متجرك لحظة بلحظة، يمنحك تنبيهات فورية، وتحكمًا كاملاً لتأمين تجربة بيع أكثر موثوقية وأمانًا.'
+
+  const workData = getWorkData(locale)
+
   return (
     <section
-    id="works"
-    className={`relative min-h-screen w-full text-start bg-black/40 ${styles.padding}`}>
+      id="works"
+      className={`relative min-h-screen w-full text-start bg-black/40 ${styles.padding}`}>
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between space-y-6 my-16 border-b-white/20 border-b pb-16">
         <Heading
           as="h1"
-          title={"كيف يعمل تفادي"}
-          text={
-            "لأن تفادي نظام متكامل للحماية الذكية، يراقب متجرك لحظة بلحظة، يمنحك تنبيهات فورية، وتحكمًا كاملاً لتأمين تجربة بيع أكثر موثوقية وأمانًا."
-          }
+          title={headingTitle}
+          text={headingText}
           layout="inline"
           titleClassName=""
           textClassName={`text-center lg:text-start`}

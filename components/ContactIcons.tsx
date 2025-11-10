@@ -23,7 +23,7 @@ const WhatsappButton: React.FC = () => {
 
   return (
     <a
-      href="https://wa.me/966554413535"
+      href="https://wa.me/966532697893"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="التواصل عبر واتساب"

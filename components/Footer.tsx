@@ -4,6 +4,8 @@ import { JSX } from 'react'
 import logo from '../public/logo.png';
 import DownloadButton from './DownloadButton';
 
+type Locale = 'ar' | 'en'
+
 type Social = {
   id: 'youtube' | 'instagram' | 'twitter'
   href: string
@@ -46,7 +48,10 @@ const socials: Social[] = [
   },
 ]
 
-export default function Footer(): JSX.Element {
+export default function Footer({ locale = 'ar' }: { locale?: Locale }): JSX.Element {
+  const labels = locale === 'en'
+    ? { privacy: 'Privacy Policy', terms: 'Terms and Conditions' }
+    : { privacy: 'سياسة الخصوصية', terms: 'الشروط والأحكام' }
   return (
     <footer className="bg-[#000000] border-t border-white/10 text-white">
       <div className="mx-auto w-full max-w-7xl py-8 px-6 sm:px-10">
@@ -56,36 +61,34 @@ export default function Footer(): JSX.Element {
             <Image src={logo} width={35} height={35} alt="logo" className="opacity-90" />
           </div>
 
-       
-        
-        {/* Social icons */}
-        <div className="flex items-center gap-4 text-white/80">
-          {socials.map((s) => (
-            <a
-              key={s.id}
-              href={s.href}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label={s.label}
-              className="p-2 rounded-full hover:bg-white/10 hover:text-white transition-colors"
-            >
-              {s.icon}
-            </a>
-          ))}
-        </div>
+          {/* Social icons */}
+          <div className="flex items-center gap-4 text-white/80">
+            {socials.map((s) => (
+              <a
+                key={s.id}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={s.label}
+                className="p-2 rounded-full hover:bg-white/10 hover:text-white transition-colors"
+              >
+                {s.icon}
+              </a>
+            ))}
+          </div>
 
-        {/* Download buttons */}
-        <DownloadButton />
+          {/* Download buttons */}
+          <DownloadButton locale={locale} />
         </div>
         {/* Bottom links row */}
         <div className="mt-6 pt-6 border-t border-white/10 text-center flex items-center justify-center">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-white/60 font-cairo">
             <Link href="/privacy" className="hover:text-white transition-colors duration-200">
-              سياسة الخصوصية
+              {labels.privacy}
             </Link>
             <span className="hidden sm:block text-white/30">|</span>
             <Link href="/terms" className="hover:text-white transition-colors duration-200">
-              الشروط والأحكام
+              {labels.terms}
             </Link>
           </div>
         </div>
