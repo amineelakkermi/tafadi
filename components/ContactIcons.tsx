@@ -1,6 +1,7 @@
 'use client';
 
-import { LucidePhone } from 'lucide-react';
+import Image from 'next/image';
+import whatsapp from '../public/whatsapp.png';
 import React from 'react';
 
 declare global {
@@ -27,9 +28,9 @@ const WhatsappButton: React.FC = () => {
       rel="noopener noreferrer"
       aria-label="التواصل عبر واتساب"
       onClick={handleWhatsappClick}
-      className="fixed bottom-6 right-6 z-50 flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe5d] rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110"
+      className="fixed bottom-3 right-3 z-50 flex items-center justify-center rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110"
     >
-      <LucidePhone size={32} color="#fff" strokeWidth={2.5} />
+      <Image src={whatsapp} alt="WhatsApp" width={90} height={90} />
     </a>
   );
 };
