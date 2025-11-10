@@ -52,8 +52,8 @@ export default function Partners() {
 
     <div className={`flex flex-col items-center
     bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-white/[0.02] backdrop-blur-xl
-    max-w-6xl mx-auto rounded-[25px] md:rounded-full bg-black/30 flex flex-col py-10 px-4 md:px-16
-    text-center relative`}> 
+    max-w-6xl mx-auto rounded-[25px]  bg-black/30 flex flex-col py-10 px-4 md:px-16
+    text-center relative mt-16`}> 
      
       <div className={styles.wrapper}>
       {images.slice(0, 9).map((src, index) => (
