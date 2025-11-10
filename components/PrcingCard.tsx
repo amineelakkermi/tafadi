@@ -107,7 +107,10 @@ export const PricingCard: React.FC<{ tier: Tier }> = ({ tier }) => {
 
         {/* After Discount */}
         <div className="flex gap-3 flex-col items-center">
-          <span className="text-sm sm:text-base text-red-400 line-through mt-1">{tier.price}</span>
+        <span className="relative text-sm sm:text-[18px] text-red-400 mt-1">
+        {tier.price}
+        <span className="absolute left-0 top-1/2 w-[100%] h-[2px] bg-red-500 -translate-y-1/2"></span>
+         </span>
           <span className="text-2xl sm:text-3xl font-bold text-violet-200">{tier.afterDiscount}</span>
         </div>
 

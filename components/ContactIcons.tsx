@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { MessageCircle } from 'lucide-react';
+import { LucidePhoneCall, MessageCircle, PhoneCall, PhoneCallIcon } from 'lucide-react';
 
 declare global {
   interface Window {
@@ -29,7 +29,7 @@ const WhatsappButton: React.FC = () => {
       onClick={handleWhatsappClick}
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe5d] rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110"
     >
-      <MessageCircle size={32} color="#fff" strokeWidth={2.5} />
+      <LucidePhoneCall size={32} color="#fff" strokeWidth={2.5} />
     </a>
   );
 };
