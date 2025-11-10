@@ -61,9 +61,9 @@ export default function Navbar({ locale = 'ar' }: { locale?: 'ar' | 'en' }): JSX
           ].join(' ')}
           aria-label="Main navigation"
         >
-          <Link
+        <Link
             href={'https://s.tafadi.sa/merchant/login'}
-            className="flex md:hidden  text-white font-medium tracking-wide hover:opacity-80 transition-colors"
+            className={`${locale === "ar" ? "flex" : "hidden"} md:hidden  text-white font-medium tracking-wide hover:opacity-80 transition-colors`}
           >
            {
             locale === 'ar' ? 'لوحة تحكم التجار' : 'Merchant Dashboard'
