@@ -55,7 +55,7 @@ export default function Partners() {
     max-w-6xl mx-auto rounded-full bg-black/30 flex flex-col py-10 px-4 md:px-16
     text-center relative`}> 
      
-       <div className={styles.wrapper}>
+      <div className={styles.wrapper}>
         {images.map((src, index) => (
           <div 
             key={index}
