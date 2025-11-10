@@ -87,7 +87,7 @@ export default function Navbar(): JSX.Element {
           {/* === Logo (centré sur mobile, à droite sur md+) === */}
           <Link
             href="/"
-            className="flex-1 flex justify-center md:justify-start items-center"
+            className="flex-1 mr-8 flex justify-center md:justify-start items-center"
             aria-label="Go to homepage"
           >
             <div
