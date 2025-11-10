@@ -34,7 +34,8 @@ const images = [
 export default function Partners() {
   return (
     <section className={`relative lg:px-12 px-6 lg:py-12 py-6 bg-black/30`}>
-    <div className="max-w-3xl mx-auto lg:my-12 my-6">
+   
+    <div className="max-w-4xm mx-auto lg:my-12 my-6">
 
       <div className='gradient-circle5' />
 
@@ -47,13 +48,12 @@ export default function Partners() {
        useDefaultParagraph={false}
        align="center"
        />
-      </div> 
+    </div> 
+
     <div className={`
     bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-white/[0.02] backdrop-blur-xl
     max-w-6xl mx-auto rounded-full bg-black/30 flex flex-col py-10 px-4 md:px-16
-    text-center relative`}>
-
-      
+    text-center relative`}> 
      
        <div className={styles.wrapper}>
         {images.map((src, index) => (

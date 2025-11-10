@@ -13,8 +13,8 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { id: 'home', name: 'الرئيسية' },
-  { id: 'features', name: 'المميزات' },
   { id: 'works', name: 'كيف يعمل تفادي ' },
+  { id: 'features', name: 'المميزات' },
   { id: 'dashboard', name: 'لوحة تحكم التجار' },
   { id: 'faq', name: 'الأسئلة الشائعة' },
 ]
