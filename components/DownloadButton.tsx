@@ -8,7 +8,7 @@ export default function DownloadButton({ locale = 'ar' }: { locale?: 'ar' | 'en'
     <div className="flex items-center justify-center gap-4">
       {/* Salla */}
       <a
-        href="https://s.salla.sa/auth?intended_to=https%3A%2F%2Fs.salla.sa%2Fapps%2Finstall%2F1450881912%3Ftrial%3D1%26utm_source%3Dapps"
+        href="https://apps.salla.sa/ar/app/1450881912"
         target="_blank"
         rel="noreferrer noopener"
         className="flex items-center justify-center gap-2 w-36 sm:w-48 h-14 sm:h-16 rounded-full border border-white/15 bg-white/10 text-sm font-medium hover:bg-white/20 transition-colors"
