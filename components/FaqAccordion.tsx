@@ -134,9 +134,9 @@ const FaqAccordion = () => {
           >
             <button
               onClick={() => toggleIndex(index)}
-              className="w-full text-left flex justify-between items-center px-6 py-4"
+              className="w-full flex justify-between items-center px-6 py-4"
             >
-              <span className="text-white leading-[30px] text-right font-medium">
+              <span className={`text-white leading-[30px] text-start font-medium`}>
                 {item.question}
               </span>
               <span className="text-white text-xl">{openIndex === index ? '-' : '+'}</span>

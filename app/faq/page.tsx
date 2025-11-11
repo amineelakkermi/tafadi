@@ -198,8 +198,8 @@ const FaqAccordion = () => {
               key={index}
               className="group relative rounded-2xl border border-white/10 bg-white/10 backdrop-blur-lg shadow-[0_0_20px_rgba(0,0,0,0.15)] hover:shadow-[0_0_25px_rgba(0,0,0,0.3)] transition-all duration-500 overflow-hidden w-full"
             >
-              <button onClick={() => toggleIndex(index)} className="w-full text-left flex justify-between items-center px-6 py-4">
-                <span className="text-white leading-[30px] text-right font-medium">{item.question}</span>
+              <button onClick={() => toggleIndex(index)} className="w-full flex justify-between items-center px-6 py-4">
+                <span className="text-white leading-[30px] text-start font-medium">{item.question}</span>
                 <span className="text-white text-xl">{openIndex === index ? '-' : '+'}</span>
               </button>
 
