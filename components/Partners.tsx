@@ -52,7 +52,7 @@ export default function Partners({ locale = 'ar' }: { locale?: Locale }) {
         <div className={styles.wrapper}>
           {images.slice(0, 6).map((src, index) => (
             <div key={index} className={`${styles.item} ${styles['item' + (index + 1)]}`}>
-              <Image src={src} alt={`Partner ${index + 1}`} width={100} height={100} className="object-cover logo" />
+              <Image src={src} alt={`Partner ${index + 1}`} width={src === partner11 ? 140 : 100} height={src === partner11 ? 140 : 100} className="object-cover logo" />
             </div>
           ))}
         </div>
@@ -60,7 +60,7 @@ export default function Partners({ locale = 'ar' }: { locale?: Locale }) {
         <div className={styles.wrapper}>
           {images.slice(6, 12).map((src, index) => (
             <div key={index} className={`${styles.item} ${styles['item' + (index + 1)]}`}>
-              <Image src={src} alt={`Partner ${index + 1}`} width={index === 1 ? 200 : 100} height={index === 1 ? 200 : 100} className="object-cover logo" />
+              <Image src={src} alt={`Partner ${index + 1}`} width={src === partner11 ? 140 : 100} height={src === partner11 ? 140 : 100} className="object-cover logo" />
             </div>
           ))}
         </div>
@@ -68,7 +68,7 @@ export default function Partners({ locale = 'ar' }: { locale?: Locale }) {
         <div className={styles.wrapper}>
           {images.slice(12, 18).map((src, index) => (
             <div key={index} className={`${styles.item} ${styles['item' + (index + 1)]}`}>
-              <Image src={src} alt={`Partner ${index + 1}`} width={index === 1 ? 200 : 100} height={index === 1 ? 200 : 100} className="object-cover logo" />
+              <Image src={src} alt={`Partner ${index + 1}`} width={src === partner11 ? 140 : 100} height={src === partner11 ? 140 : 100} className="object-cover logo" />
             </div>
           ))}
         </div>  
