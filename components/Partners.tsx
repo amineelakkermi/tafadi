@@ -50,7 +50,7 @@ export default function Partners({ locale = 'ar' }: { locale?: Locale }) {
 
       <div className={`flex flex-col items-center bg-gradient-to-b from-white/[0.08] via-white/[0.04] to-white/[0.02] backdrop-blur-xl max-w-6xl mx-auto rounded-[25px]  bg-black/30 flex flex-col py-10 px-4 md:px-16 text-center relative mt-16`}> 
         <div className={styles.wrapper}>
-          {images.slice(0, 9).map((src, index) => (
+          {images.slice(0, 6).map((src, index) => (
             <div key={index} className={`${styles.item} ${styles['item' + (index + 1)]}`}>
               <Image src={src} alt={`Partner ${index + 1}`} width={100} height={100} className="object-cover logo" />
             </div>
@@ -58,13 +58,22 @@ export default function Partners({ locale = 'ar' }: { locale?: Locale }) {
         </div>
 
         <div className={styles.wrapper}>
-          {images.slice(9, 18).map((src, index) => (
+          {images.slice(6, 12).map((src, index) => (
             <div key={index} className={`${styles.item} ${styles['item' + (index + 1)]}`}>
               <Image src={src} alt={`Partner ${index + 1}`} width={index === 1 ? 200 : 100} height={index === 1 ? 200 : 100} className="object-cover logo" />
             </div>
           ))}
         </div>
+
+        <div className={styles.wrapper}>
+          {images.slice(12, 18).map((src, index) => (
+            <div key={index} className={`${styles.item} ${styles['item' + (index + 1)]}`}>
+              <Image src={src} alt={`Partner ${index + 1}`} width={index === 1 ? 200 : 100} height={index === 1 ? 200 : 100} className="object-cover logo" />
+            </div>
+          ))}
+        </div>  
       </div>
+      
     </section>
   );
 }
