@@ -16,7 +16,7 @@
 ##  التثبيت المحلي (Local Setup)
 
 1. **استنساخ المشروع من GitHub**
-   git clone https://github.com/USERNAME/tafadi.git
+   git clone https://github.com/amineelakkermi/tafadi.git
    cd tafadi
 
 2. **تثبيت الحزم**
