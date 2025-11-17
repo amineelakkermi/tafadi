@@ -46,7 +46,7 @@ http://localhost:3000
 
 ---
 
-##  النشر على Vercel (موصى به)
+##  النشر على Vercel 
 
 1. أنشئ حسابًا على [Vercel](https://vercel.com/signup)
 2. اضغط **New Project → Import Git Repository**

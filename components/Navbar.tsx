@@ -49,7 +49,7 @@ export default function Navbar({ locale = 'ar' }: { locale?: 'ar' | 'en' }): JSX
 
   return (
     <header className="fixed top-4 left-0 right-0 z-[999]">
-      <div className="mx-auto w-[94%] sm:w-[90%] lg:w-[86%] max-w-[1100px]">
+      <div className="mx-auto w-[94%] sm:w-[90%] lg:w-[86%] max-w-6xl">
         <nav
           className={[
             'rounded-full border border-white/10 px-4 sm:px-6',
